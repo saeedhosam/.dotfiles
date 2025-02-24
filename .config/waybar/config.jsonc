@@ -1,8 +1,8 @@
 {
-  "layer": "top",
-  "position": "top",
+  "layer": "bottom",
+  "position": "bottom",
   "modules-left": [
-    "custom/logo",
+    // "custom/logo",
     "clock",
     "disk",
     "memory",
@@ -13,7 +13,7 @@
     "hyprland/workspaces",
   ],
   "modules-right": [
-    "hyprland/window",
+    // "hyprland/window",
     "group/blight",
     "idle_inhibitor",
     "custom/clipboard",
@@ -24,14 +24,14 @@
   ],
   "reload_style_on_change": true,
 
-  "custom/logo": {
-    "format": "<span font='20px'>  </span>",
-    "tooltip": false,
-    "on-click": "swaync-client -t"
-  },
+  // "custom/logo": {
+  //   "format": "<span font='20px'>  </span>",
+  //   "tooltip": false,
+  //   "on-click": "swaync-client -t"
+  // },
 
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format": "{:%I:%M %p }",
     "tooltip": true,
     "tooltip-format": "<small>{:%D}</small>",
     "calendar-weeks-pos": "right",
@@ -61,13 +61,6 @@
 
   "hyprland/workspaces": {
     "format": "<span font='18px'>{icon}</span>",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": " ",
-      "4": "󱝿",
-      "5": "",
-    },
     "persistent-workspaces": {
       "*": [
         1,
@@ -203,7 +196,7 @@
 
   "network": {
     "format-wifi": "<span font='11'> </span>",
-    "format-ethernet": "<span font='11'>󰈀 </span>",
+    "format-ethernet": "<span font='11'>󰈀</span>",
     "format-disconnected": "<span font='11'>󱐅 </span>",
     "tooltip-format-disconnected": "Disconnected",
     "tooltip-format": "{ipaddr}",
