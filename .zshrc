@@ -24,7 +24,7 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubetcx
+zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions
