@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<C-h>', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
@@ -21,7 +21,7 @@ return {
       },
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['<C-h>'] = 'close_window',
           ['l'] = function(state)
             local node = state.tree:get_node()
             require('neo-tree.sources.filesystem.commands').open(state)
