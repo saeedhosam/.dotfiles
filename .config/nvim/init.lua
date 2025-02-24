@@ -84,6 +84,26 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- If you open neo-vim with an empty buffer, it should delete it
+if vim.fn.bufname '%' == '' and vim.bo.modified == false then
+  vim.cmd 'bdelete!'
+end
+
+--
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    local arg = vim.fn.argv(0)
+    if arg ~= '' and vim.fn.isdirectory(arg) == 1 then
+      -- Change directory
+      vim.cmd('cd ' .. arg)
+      -- Open Neo-tree
+      vim.cmd 'Neotree reveal'
+      -- Close all other windows
+      vim.cmd 'only'
+    end
+  end,
+})
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
