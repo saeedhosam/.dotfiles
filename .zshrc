@@ -10,6 +10,11 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Apply collors from pywal
+(cat ~/.cache/wal/sequences &)
+cat ~/.cache/wal/sequences
+source ~/.cache/wal/colors-tty.sh
+
 # Add in Oh-My-Posh
 
 # Add in zsh plugins
