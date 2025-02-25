@@ -17,6 +17,5 @@ while true; do
     wal -i "$WALLPAPER"
 
     # Wait for 1 hour before changing again
-    # sleep 3600
-    sleep 60
+    sleep 3600
 done
