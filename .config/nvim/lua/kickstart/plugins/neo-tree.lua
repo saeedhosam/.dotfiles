@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '<C-h>', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
@@ -21,14 +21,8 @@ return {
       },
       window = {
         mappings = {
-          ['<C-h>'] = 'close_window',
-          ['l'] = function(state)
-            local node = state.tree:get_node()
-            require('neo-tree.sources.filesystem.commands').open(state)
-            if node.type == 'file' then
-              vim.cmd 'Neotree close'
-            end
-          end,
+          ['\\'] = 'close_window',
+          ['l'] = 'open',
           ['L'] = function(state)
             local node = state.tree:get_node()
             if node.type == 'file' then
