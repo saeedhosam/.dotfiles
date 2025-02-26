@@ -11,7 +11,7 @@ while true; do
     WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 
     # Set the wallpaper using swww
-    swww img "$WALLPAPER" --transition-type any
+    swww img "$WALLPAPER" --transition-type simple
 
     # Generate colors with pywal
     wal -i "$WALLPAPER"
