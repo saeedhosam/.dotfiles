@@ -158,6 +158,17 @@ window#waybar.hidden {
 	background: @color12;
 }
 
+#temperature {
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 6px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: @color0;
+	background: @color12;
+}
+
 #tray {
 	margin-left: 8px;
 	padding-left: 10px;

@@ -1,6 +1,6 @@
 {
   "position": "bottom",
-  "modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
+  "modules-left": ["custom/launcher","cpu","memory","temperature","custom/media","tray"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["custom/updates","custom/wallpaper","backlight","pulseaudio","clock","battery","custom/suspend","custom/power"],
   
@@ -46,9 +46,12 @@
     "tooltip-format": " {%I:%MY}",
     "tooltip": false
   },
+  "temperature": {
+    "tooltip": false
+  },
   "cpu": {
     "interval": 15,
-    "format": " {}%",
+    "format": " {usage}%",
     "max-length": 10
   },
   "memory": {
