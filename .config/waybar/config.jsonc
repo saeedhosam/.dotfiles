@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "position": "bottom",
   "modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["custom/updates","custom/wallpaper","backlight","pulseaudio","clock","battery","custom/suspend","custom/power"],
@@ -8,7 +8,7 @@
     "tooltip": false,
     "scroll-step": 5,
     "format": "{icon} {volume}%",
-    "format-muted": "{icon} {volume}%",
+    "format-muted": "",
     "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "format-icons": {
       "default": ["", " ", " "]
