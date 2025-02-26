@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/Wallpaper-Bank/wallpapers"
+WALLPAPER_DIR="$HOME/.dotfiles/wallpapers"
 
 # Ensure swww is running
 swww init &>/dev/null
