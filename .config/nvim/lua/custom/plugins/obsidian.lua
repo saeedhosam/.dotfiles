@@ -27,6 +27,10 @@ return {
         name = 'college',
         path = '~/obsidian/college/',
       },
+      {
+        name = 'life',
+        path = '~/obsidian/life/',
+      },
     },
 
     -- see below for full list of options 👇
