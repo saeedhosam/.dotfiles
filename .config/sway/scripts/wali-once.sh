@@ -14,4 +14,3 @@ swww img "$WALLPAPER" --transition-type simple
 
 # Generate colors with pywal
 wal -i "$WALLPAPER"
-
