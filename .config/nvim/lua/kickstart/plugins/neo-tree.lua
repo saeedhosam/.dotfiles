@@ -23,7 +23,23 @@ return {
         position = 'right',
         mappings = {
           ['\\'] = 'close_window',
-          ['l'] = 'open',
+          ['l'] = function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            if node.type == 'file' then
+              if path:match '%.pdf$' then
+                -- Open PDF with zathura
+                vim.fn.jobstart({ 'zathura', path }, { detach = true })
+              else
+                -- Open file normally
+                require('neo-tree.sources.filesystem.commands').open(state)
+              end
+              vim.cmd 'wincmd p' -- optional: return focus to Neo-tree
+            elseif node.type == 'directory' then
+              -- Expand/collapse directory
+              require('neo-tree.sources.filesystem.commands').toggle_node(state)
+            end
+          end,
           ['L'] = function(state)
             local node = state.tree:get_node()
             if node.type == 'file' then

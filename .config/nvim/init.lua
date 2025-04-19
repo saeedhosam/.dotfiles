@@ -1,5 +1,9 @@
 vim.opt.conceallevel = 2
 
+-- Leet shortcuts
+vim.keymap.set('n', '<C-`>', ':Leet run<CR>')
+vim.keymap.set('n', '<C-S-`>', ':Leet submit<CR>')
+
 -- Enable soft wrapping
 vim.opt.wrap = true -- Wrap long lines instead of cutting them off
 vim.opt.linebreak = true -- Break lines at word boundaries
