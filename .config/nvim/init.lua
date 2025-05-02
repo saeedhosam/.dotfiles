@@ -1,3 +1,6 @@
+-- things for windows, comment if on linux:
+vim.cmd [[cd E:/_justCode]]
+--------------------------------------------
 vim.opt.conceallevel = 2
 
 -- Leet shortcuts
