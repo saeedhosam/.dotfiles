@@ -1,6 +1,9 @@
 -- Always open in my coding hub
 vim.cmd [[cd E:\_justCode]]
 
+-- Mapping Leader
+vim.g.mapleader = " "
+
 -- Options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -17,7 +20,18 @@ vim.keymap.set('n', '<A-h>', 'gT')
 vim.keymap.set('n', '<A-l>', 'gt')
 
 vim.keymap.set('n', '<C-[>', '<cmd>noh<CR>')
+vim.keymap.set('t', '<C-[>', '<C-\\><C-n>')
+
 vim.keymap.set('n', '<A-r>', function()
 	dofile(vim.env.MYVIMRC)
 	print("config reloaded!")
 end)
+
+vim.keymap.set('n', '<leader>st', function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.cmd("startinsert")
+	vim.api.nvim_win_set_height(0, 15)
+end)
+
