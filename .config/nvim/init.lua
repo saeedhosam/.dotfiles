@@ -54,6 +54,7 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>tt', '<cmd>Telescope colorscheme<CR>', { desc = '[T]elescope [T]hemes' })
 
 vim.keymap.set('n', '<leader>st', function()
   vim.cmd.vnew()
