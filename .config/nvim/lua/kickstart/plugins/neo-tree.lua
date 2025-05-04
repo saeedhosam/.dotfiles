@@ -11,13 +11,19 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal_force_cwd<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
       window = {
+        position = 'right',
         mappings = {
           ['\\'] = 'close_window',
+          ['l'] = 'open',
+          ['<CR>'] = '',
+          ['h'] = 'close_node',
+          [','] = 'navigate_up',
+          ['<BS>'] = '',
         },
       },
     },
