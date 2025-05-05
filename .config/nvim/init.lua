@@ -34,6 +34,7 @@ vim.keymap.set('n', '<A-l>', '<C-w>l', { desc = 'Move focus to the right window'
 vim.keymap.set('n', '<A-j>', '<C-w>j', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<A-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', '<A-q>', '<C-w>q') -- [q]uit
+vim.keymap.set('n', '<A-u>', '<cmd>BufferClose<CR>')
 vim.keymap.set('n', '<A-e>', '<C-w>T') -- [e]ject
 vim.keymap.set('n', '<A-=>', '<C-w>=')
 vim.keymap.set('n', '<A-a>', '<C-w>H')
