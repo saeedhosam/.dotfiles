@@ -1,6 +1,12 @@
 return {
   'akinsho/toggleterm.nvim',
   version = '*',
-  opts = {--[[ things you want to change go here]]
+  opts = {
+    open_mapping = [[<c-\>]],
+    direction = 'float',
+    shade_terminals = true,
+    float_opts = {
+      border = 'curved',
+    },
   },
 }
