@@ -21,6 +21,9 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
+  { "lowitea/aw-watcher.nvim",
+  opts = {},
+  },
 
   { import = "plugins" },
 }, lazy_config)
