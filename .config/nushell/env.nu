@@ -1,0 +1,1 @@
+../../.dotfiles/.config/nushell/env.nu
