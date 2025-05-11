@@ -6,3 +6,16 @@ ls .dotfiles/.config/nushell/
 ls
 nvim
 cd .dotfiles/
+git add .
+git commit -m 'hello'
+git push
+git fetch
+git pull
+git config pull.rebase false
+git pull
+git config --global core.editor "nvim"
+git pull
+git commit -m 'hello'
+git push
+git pull
+nvim 
