@@ -19,3 +19,17 @@ git commit -m 'hello'
 git push
 git pull
 nvim 
+git add .
+git commit -m 'owf'
+git pus
+git push
+clear
+nvim .config/nu
+nvim .config/nushell/
+$nu-config-path
+nu $nu-config-path
+nvim .config/nushell/
+exit
+ls
+cd .dotfiles/
+:qa
