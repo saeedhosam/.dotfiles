@@ -1,1 +1,1 @@
-../../.dotfiles/.config/nushell/env.nu
+# Basic Nushell Environment

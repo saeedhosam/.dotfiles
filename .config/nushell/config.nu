@@ -1,1 +1,1 @@
-../../.dotfiles/.config/nushell/config.nu
+# Basic Nushell Config
