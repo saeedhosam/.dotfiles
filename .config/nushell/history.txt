@@ -1,1 +1,8 @@
-../../.dotfiles/.config/nushell/history.txt
+ls
+ls ~/.config/
+ls .dotfiles/.config/
+ls ~/.config/nushell
+ls .dotfiles/.config/nushell/
+ls
+nvim
+cd .dotfiles/
