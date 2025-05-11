@@ -1,0 +1,70 @@
+[general]
+working_directory = "C:/Users/makym"
+
+[window]
+dynamic_padding = true
+decorations = "None"
+opacity = 0.9
+startup_mode = "Fullscreen"
+
+[terminal]
+shell = { program = "cmd.exe", args = ["/c", "wsl ~ && nu"] }
+
+[mouse]
+hide_when_typing = true
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "CaskaydiaCove Nerd Font"
+style = "Italic"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "None"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+chars = "\u001bf"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Control"
+action = "None"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Control"
+chars = "\u001bb"
+
+[[keyboard.bindings]]
+key = "I"
+mods = "Control"
+action = "None"
+
+[[keyboard.bindings]]
+key = "I"
+mods = "Control"
+chars = "\u0017"
+
+[[keyboard.bindings]]
+key = "O"
+mods = "Control"
+action = "None"
+
+[[keyboard.bindings]]
+key = "O"
+mods = "Control"
+chars = "\u001bd"
+
