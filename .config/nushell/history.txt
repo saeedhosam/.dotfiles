@@ -33,3 +33,17 @@ exit
 ls
 cd .dotfiles/
 :qa
+git add .
+git commit -m 'welcome starship to nushell'
+git push
+exit
+ls
+rm -rf nushell-config-backup/
+ls
+rm -rf yay/
+ls
+yay -Syu
+:qa
+nvim
+nvim .dotfiles/.config/alacritty/alacritty.toml
+cd .dotfiles/
