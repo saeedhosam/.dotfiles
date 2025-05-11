@@ -47,3 +47,16 @@ yay -Syu
 nvim
 nvim .dotfiles/.config/alacritty/alacritty.toml
 cd .dotfiles/
+git add .
+git commit -m 'woeijfwe'
+git push
+exit
+nvim .dotfiles/.config/nvim/
+nvim
+cd .dotfiles/
+cd .config/
+cd nvim/
+ls
+nvim .
+nvim
+cd ..
