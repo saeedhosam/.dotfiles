@@ -1,3 +1,41 @@
 rm history.txt
 git add .
 cd ..
+git add .
+git commit -m 'hello kickstart'
+git push
+git push --set-upstream origin nvim-kickstart-with-nvchad
+nvim
+cd .config/
+cd nvim
+ls
+ls -al
+nvim .stylua.toml
+nvim lua/custom/
+nvim
+ls
+cd lua/custom/plugins/
+ls
+cd ..
+nvim
+exit
+ls
+mkdir configs
+cd configs/
+ls
+nvim cmp.lua
+nvim gitsigns.lua
+nvim
+nvim treesitter.lua
+nvim
+nvim luasnip.lua
+nvim
+ls
+nvim nvimtree.lua
+nvim
+cd ..
+ls
+rm -rf configs/
+ls
+git checkout main
+cd ~/.dotfiles/
