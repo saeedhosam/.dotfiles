@@ -60,3 +60,88 @@ ls
 nvim .
 nvim
 cd ..
+git add .
+git commit -m 'woeijf'
+git push
+exit
+cd ~
+ls
+cd .dotfiles/.config/nvim/
+nvim
+sudo pacman -Syu xclip
+xclip
+xclip -h
+exit
+cd ~
+cd .dotfiles/.config/nvim/
+nvim
+cd ~
+git clone git@github.com:saeedhosam/sandouqMC.git
+cd sandouqMC/
+ls
+cd two-sum/
+npm install
+npm start
+sudo pacman -Syu npm
+pnpm install
+sudo pacman -Syu pnpm
+pnpm install
+npm start
+cat /etc/resolv.conf | grep nameserver | awk '{print $2}'
+nvim
+cd ~/.config/nvim
+ls
+cat /etc/resolv.conf | grep nameserver | awk '{print $2}'
+nvim
+curl http://YOUR_WINDOWS_IP:5600/api/0/info
+curl http://10.255.255.254:5600/api/0/info
+curl http://127.0.0.1:5600/api/0/info
+exit
+curl http://127.0.0.1:5600/api/0/info
+curl http://localhost:5600/api/0/info
+curl http://127.0.0.1:5600/api/0/info
+curl http://localhost:5600/api/0/info
+cat /etc/resolv.conf
+curl http://10.255.255.254:5600/api/0/info
+curl http://172.27.224.1:5600/api/0/info
+curl http://Saeed:5600/api/0/info
+curl http://172.27.224.1:5600/api/0/info
+ip route show | grep -i default | awk '{ print $3}'
+curl http://172.18.96.1:5600/api/0/info
+curl http://10.255.255.254:5600/api/0/info
+ip route show | grep -i default | awk '{ print $3}'
+curl http://localhost:5600/api/0/info 
+curl http://172.18.96.1:5600/api/0/info 
+ip route show | grep -i default | awk '{ print $3}'
+curl http://172.18.96.1:5600/api/0/info
+:q
+ls
+curl http://localhost:5600/api/0/info
+ip route
+cat /etc/resolv.conf
+ping "$(hostname).local"
+nc -zv "$(hostname).local" 8888
+sudo pacman -Syu nc
+sudo pacman -Syu opensuse
+bash
+ls
+cd ..
+exit
+cd ~
+nvim /etc/wsl.conf
+sudo nvim /etc/wsl.con
+sudo nvim /etc/wsl.conf
+exit
+cd ~
+curl http://localhost:5600/api/0/info
+curl http://192.192.192.1:5600/api/0/info
+curl http://host:5600/api/0/info
+curl http://localhost:5600/api/0/info
+exit
+curl http://localhost:5600/api/0/info
+exit
+cd ~
+curl http://localhost:5600/api/0/info
+ls
+nvim
+cd .dotfiles/
