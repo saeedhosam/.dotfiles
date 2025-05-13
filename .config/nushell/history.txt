@@ -39,3 +39,73 @@ rm -rf configs/
 ls
 git checkout main
 cd ~/.dotfiles/
+git checkout nvim-kickstart-with-nvchad
+ls
+rm -rf ./*
+ls
+ls -al
+cd ..
+cd ~
+git clone https://github.com/NvChad/NvChad.git ./nvchad
+cd ~
+git clone https://github.com/nvim-lua/kickstart.nvim.git ./kickstart
+cd kickstart/
+cd nvchad/
+tmux kill
+tmux
+clear
+ls
+git commit -m 'owiejf'
+git push
+git add .
+git commit -m 'weiojf'
+git push
+git branch -m nvim
+git push origin -u nvim
+git push origin --delete nvim-kickstart-with-nvchad
+ls
+ls -al
+nvim ~/kickstart/init.lua
+ls
+nvim init.lua
+nvim lua/config/lazy.lua
+mkdir lua
+mkdur lua/config
+mkdir lua/config
+nvim lua/config/lazy.lua
+ls
+ls lua/
+nvim lua/config/lazy.lua
+mkdir lua/plugins
+nvim
+nvim lua/plugins/init.lua
+nvim
+rm lua/plugins/init.lua
+nvim lua/plugins/nvim-tree.lua
+nvim lua/plugins/todo-comments.lua
+nvim
+nvim lua/plugins/nvim-tree.lua
+nvim
+nvim lua/plugins/nvim-tree.lua
+nvim .
+nvim
+nvim .
+nvim
+nvim .
+nvim
+nvim 
+nvim
+nvim .
+sudo pacman -Syu stylua
+stylua
+nvim
+nvim .
+nvim 
+nvim .
+nvim 
+nvim
+nvim 
+nvim
+nvim .
+exit
+cd ..
