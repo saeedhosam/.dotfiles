@@ -109,3 +109,13 @@ nvim
 nvim .
 exit
 cd ..
+git add .
+git commit -m 'from scratch, Alhamdulillah'
+git push
+nvim
+cd .dotfiles/
+cd .config/
+cd nvim/
+nvim .
+cd .
+cd ..
