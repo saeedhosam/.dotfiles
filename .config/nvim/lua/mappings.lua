@@ -9,6 +9,10 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 map('n', '<M-y>', '<cmd>vsplit<CR>')
 map('n', '<M-x>', '<cmd>split<CR>')
+map('n', '<M-a>', '<C-W>H')
+map('n', '<M-s>', '<C-W>J')
+map('n', '<M-w>', '<C-W>K')
+map('n', '<M-d>', '<C-W>L')
 
 -- tabufline
 map('n', '<M-o>', '<cmd>tabnext<CR>')
@@ -22,7 +26,8 @@ map('n', '<M-h>', function()
     require('nvchad.tabufline').prev()
 end, { desc = 'buffer goto prev' })
 
-map('n', '<M-q>', function()
+map('n', '<M-e>', '<C-w>q') -- close window
+map('n', '<M-q>', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'buffer close' })
 
@@ -77,32 +82,34 @@ map('n', '<leader>sn', function()
 end, { desc = '[S]earch [N]eovim files' })
 
 map('n', '<leader>st', function()
-  require("nvchad.themes").open()
+    require('nvchad.themes').open()
 end)
 
--- new terminals
-map("n", "<leader>h", function()
+-- terminal
+map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 
-  require("nvchad.term").new { pos = "sp" }
-end, { desc = "terminal new horizontal term" })
-
-
-map("n", "<leader>v", function()
-  require("nvchad.term").new { pos = "vsp" }
-end, { desc = "terminal new vertical term" })
-
+-- -- new terminals
+-- map('n', '<leader>h', function()
+--     require('nvchad.term').new { pos = 'sp' }
+-- end, { desc = 'terminal new horizontal term' })
+--
+-- map('n', '<leader>v', function()
+--     require('nvchad.term').new { pos = 'vsp' }
+-- end, { desc = 'terminal new vertical term' })
+--
+-- map('n', '<leader>i', function()
+--     require('nvchad.term').new { pos = 'float' }
+-- end, { desc = 'terminal new float term' })
 
 -- toggleable
-map({ "n", "t" }, "<A-v>", function()
-  require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
-end, { desc = "terminal toggleable vertical term" })
+map({ 'n', 't' }, '<M-p>', function()
+    require('nvchad.term').toggle { pos = 'vsp', id = 'vtoggleTerm' }
+end, { desc = 'terminal toggleable vertical term' })
 
-map({ "n", "t" }, "<A-h>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
-end, { desc = "terminal toggleable horizontal term" })
+map({ 'n', 't' }, '<M-n>', function()
+    require('nvchad.term').toggle { pos = 'sp', id = 'htoggleTerm' }
+end, { desc = 'terminal toggleable horizontal term' })
 
-
-map({ "n", "t" }, "<A-i>", function()
-  require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
-end, { desc = "terminal toggle floating term" })
-
+map({ 'n', 't' }, '<M-i>', function()
+    require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
+end, { desc = 'terminal toggle floating term' })
