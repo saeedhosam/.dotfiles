@@ -145,3 +145,7 @@ curl http://localhost:5600/api/0/info
 ls
 nvim
 cd .dotfiles/
+git add .
+git commit -m 'cool'
+git push
+cd .dotfiles/
