@@ -149,3 +149,10 @@ git add .
 git commit -m 'cool'
 git push
 cd .dotfiles/
+git add .
+git commit -m 'ActivityWatcher initiate'
+git push
+nvim
+nvim .dotfiles/.config/nvim/ini
+nvim .dotfiles/.config/nvim/init.lua
+cd .dotfiles/
