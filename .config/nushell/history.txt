@@ -119,3 +119,7 @@ cd nvim/
 nvim .
 cd .
 cd ..
+git add .
+git commit -m 'finally'
+git push
+cd .dotfiles/
