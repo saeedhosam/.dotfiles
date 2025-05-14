@@ -17,6 +17,9 @@ map('n', '<M-d>', '<C-W>L')
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
 
+map('n', ';', ':')
+map('i', '<C-j>', '<Esc>')
+
 -- tabufline
 map('n', '<M-o>', '<cmd>tabnext<CR>')
 map('n', '<M-i>', '<cmd>tabprevious<CR>')
