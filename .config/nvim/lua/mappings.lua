@@ -18,7 +18,6 @@ map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
 
 map('n', ';', ':')
-map('i', '<C-j>', '<Esc>')
 
 map("n", "<leader>tt", ":lua require('base46').toggle_transparency()<CR>", { noremap = true, silent = true, desc = "Toggle Background Transparency" })
 
@@ -105,3 +104,14 @@ map({ 'n', 't' }, '<M-i>', function()
     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
 end, { desc = 'terminal toggle floating term' })
 
+
+-- obsidian
+vim.keymap.set("n", "<leader>so", function()
+  local client = require("obsidian").get_client()
+  local vault_path = tostring(client:vault_root())
+
+  require("telescope.builtin").find_files({
+    prompt_title = "Search Obsidian Vault",
+    search_dirs = { vault_path },
+  })
+end, { desc = "Search current Obsidian vault" })
