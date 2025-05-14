@@ -127,3 +127,36 @@ git add .
 git commit -m 'iowjef'g
 git push
 cd .dotfiles/
+git add .
+git commit -m 'new shortcuts'
+git push
+nvim .
+$env.config.table.mode = 'rounded'
+table --list | first 5<\n>
+$env.config.table.mode = 'psql'<\n>
+table --list | first 5<\n>
+$env.config.table.mode = 'rounded'
+nvim .dotfiles/.config/nushell/config.nu
+source .dotfiles/.config/nushell/config.nu
+ojweijf
+nvim
+nvim .config/nushell/config.nu
+tmux
+tmux --help
+tmux -h
+nvim 
+ls
+tmux attach
+tmux
+nvim
+ls
+cd ..
+cd ~
+ls
+cd -al
+ls -al
+cd .rustup/
+ls
+cd ~
+ls
+cd .dotfiles/
