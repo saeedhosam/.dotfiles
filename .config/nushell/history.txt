@@ -160,3 +160,21 @@ ls
 cd ~
 ls
 cd .dotfiles/
+git add .
+git commit -m 'cool'
+git push
+nvim 
+nvim
+exit
+nvim
+ls
+nvim alacritty.toml
+cd ../..
+git add .
+git commit -m 'wioefjw'
+ls ~
+git push
+ls
+cd .dotfiles/
+ls
+nvim
