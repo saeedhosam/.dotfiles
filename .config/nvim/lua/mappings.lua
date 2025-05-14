@@ -22,7 +22,6 @@ map('i', '<C-j>', '<Esc>')
 
 map("n", "<leader>tt", ":lua require('base46').toggle_transparency()<CR>", { noremap = true, silent = true, desc = "Toggle Background Transparency" })
 
-
 -- tabufline
 map('n', '<M-o>', '<cmd>tabnext<CR>')
 map('n', '<M-i>', '<cmd>tabprevious<CR>')

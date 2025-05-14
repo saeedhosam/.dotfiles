@@ -190,3 +190,8 @@ cd alacritty/
 ls
 nvim alacritty.toml
 cd ~/.dotfiles/
+git add .
+git commit -m 'alacritty theme chadracula evondev'
+git push
+nvim .config/alacritty/alacritty.toml
+nvim
