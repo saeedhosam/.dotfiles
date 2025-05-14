@@ -21,6 +21,10 @@ return {
                 name = 'college',
                 path = '~/OneDrive/Documents/GitHub/obsidian/college',
             },
+            {
+                name = 'cs',
+                path = '~/OneDrive/Documents/GitHub/obsidian/cs',
+            },
         },
     },
 }
