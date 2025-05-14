@@ -178,3 +178,15 @@ ls
 cd .dotfiles/
 ls
 nvim
+git add .
+git commit -m 'wefij'
+git push
+ls
+git .config/
+ls
+cd .config/
+ls
+cd alacritty/
+ls
+nvim alacritty.toml
+cd ~/.dotfiles/

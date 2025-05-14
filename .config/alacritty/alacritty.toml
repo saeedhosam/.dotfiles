@@ -27,3 +27,72 @@ style = "Bold"
 [font.italic]
 family = "CaskaydiaCove Nerd Font"
 style = "Italic"
+
+
+[colors.primary]
+background = "#141423"
+foreground = "#E9E9F4"
+dim_foreground = "#414171"
+bright_foreground = "#F1F2F8"
+
+[colors.cursor]
+text = "#141423"
+cursor = "#E9E9F4"
+
+
+[colors.vi_mode_cursor]
+text = "#141423"
+cursor = "#E9E9F4"
+
+
+[colors.search.matches]
+foreground = "#141423"
+background = "#E5C697"
+
+[colors.search.focused_match]
+foreground = "#141423"
+background = "#20E3B2"
+
+
+[colors.footer_bar]
+foreground = "#141423"
+background = "#E5C697"
+
+[colors.hints.start]
+foreground = "#141423"
+background = "#62D6E8"
+
+
+[colors.hints.end]
+foreground = "#141423"
+background = "#FFB86C"
+
+[colors.selection]
+text = "#141423"
+background = "#E9E9F4"
+
+[colors.normal]
+black = "#141423"
+red = "#C197FD"
+green = "#E5C697"
+yellow = "#62D6E8"
+blue = "#20E3B2"
+magenta = "#FF6BCB"
+cyan = "#8BE9FD"
+white = "#E9E9F4"
+
+[colors.bright]
+black = "#373760"
+red = "#C197FD"
+green = "#E5C697"
+yellow = "#62D6E8"
+blue = "#20E3B2"
+magenta = "#FF6BCB"
+cyan = "#8BE9FD"
+white = "#F1F2F8"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#7e7eb5"
+
+
