@@ -9,6 +9,8 @@ o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "both"
 
+o.conceallevel = 2
+
 o.expandtab = true
 o.shiftwidth = 2
 o.smartindent = true
