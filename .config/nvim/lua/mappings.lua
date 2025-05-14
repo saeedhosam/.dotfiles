@@ -14,6 +14,9 @@ map('n', '<M-s>', '<C-W>J')
 map('n', '<M-w>', '<C-W>K')
 map('n', '<M-d>', '<C-W>L')
 
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
+
 -- tabufline
 map('n', '<M-o>', '<cmd>tabnext<CR>')
 map('n', '<M-i>', '<cmd>tabprevious<CR>')
@@ -43,7 +46,6 @@ map('n', '<leader>f', function()
 end, { desc = 'general format file' })
 
 -- Telescope
--- See `:help telescope.builtin`
 local builtin = require 'telescope.builtin'
 
 map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
@@ -67,8 +69,6 @@ map('n', '<leader>/', function()
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
--- It's also possi/kjkjle to pass additional configuration options.
---  See `:help telescope.builtin.live_grep()` for information about particular keys
 map('n', '<leader>s/', function()
     builtin.live_grep {
         grep_open_files = true,
@@ -76,7 +76,6 @@ map('n', '<leader>s/', function()
     }
 end, { desc = '[S]earch [/] in Open Files' })
 
--- Shortcut for searching your Neovim configuration files
 map('n', '<leader>sn', function()
     builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
@@ -87,19 +86,6 @@ end)
 
 -- terminal
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
-
--- -- new terminals
--- map('n', '<leader>h', function()
---     require('nvchad.term').new { pos = 'sp' }
--- end, { desc = 'terminal new horizontal term' })
---
--- map('n', '<leader>v', function()
---     require('nvchad.term').new { pos = 'vsp' }
--- end, { desc = 'terminal new vertical term' })
---
--- map('n', '<leader>i', function()
---     require('nvchad.term').new { pos = 'float' }
--- end, { desc = 'terminal new float term' })
 
 -- toggleable
 map({ 'n', 't' }, '<M-p>', function()
@@ -113,3 +99,4 @@ end, { desc = 'terminal toggleable horizontal term' })
 map({ 'n', 't' }, '<M-i>', function()
     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
 end, { desc = 'terminal toggle floating term' })
+
