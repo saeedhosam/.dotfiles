@@ -123,3 +123,7 @@ git add .
 git commit -m 'finally'
 git push
 cd .dotfiles/
+git add .
+git commit -m 'iowjef'g
+git push
+cd .dotfiles/
