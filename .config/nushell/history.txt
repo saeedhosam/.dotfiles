@@ -202,3 +202,8 @@ nvim
 cd ~
 ls
 cd .dotfiles/
+git add .
+git commit -m 'firenvim'
+git push
+cd ~
+cd .dotfiles/
