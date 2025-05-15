@@ -298,3 +298,129 @@ ollama serve
 cd .dotfiles/
 git add .
 nvim .
+git add .
+git commit -m 'hello tmux'
+git push
+nvidia-smi
+cd ..
+sudo pacman -Syu git cmake make gcc
+git clone https://github.com/ggerganov/llama.cpp<\n>cd llama.cpp<\n>
+ls
+make -j$(nproc) -LLAMA_OPENBLAS=1
+make -j$(nproc) LLAMA_OPENBLAS=1
+make -j$(nproc)
+cmake
+cmake -B build
+cmake --build build --config Release
+ls
+cd ..
+ls
+rm -rf llama.cpp/
+ls
+sudo pacman -Syu aichat
+aichat
+nvim .config/aichat/config.yaml
+ls
+git clone git@github.com:saeedhosam/soul.git
+ls
+cd soul/
+rm -rf ./*
+ls
+ls -al
+nvim main.py
+python
+sudo pacman -Syu python
+python -m venv env
+ls
+nvim .
+ls -al env/
+nvim env/
+cd env/
+cd bin/
+ls
+ls -al
+cd .. 
+cd ..
+cd soul/
+ls
+nvim main.py
+source env/bin/activate.fish
+rm -rf env/
+python -m venv env --upgrade-deps<\n>
+source env/bin/activate.fish<\n>
+bash env/bin/activate
+ls
+which python
+echo $env.VIRTUAL_ENV<\n>
+ئسا
+pip install -r requirements.txt
+pip install google-genai opencv-python pyaudio pillow mss
+zsh
+ls
+cd soul/
+ls
+cd soul/
+zsh
+zsh
+ls
+git add .
+git commit -m 'again'
+git push
+:qa
+ls
+starship
+starship config
+starship config -h 
+ls
+sudo pacman -Syu vi
+starship config -h 
+starship config
+cd ..
+ls
+cd .config/
+ls
+cd ..
+ls
+cd .dotfiles/
+nvim .config/
+source .config/nushell/config.nu
+tmux
+cd ..
+cd ~
+ls
+nvim .
+:qa
+ls
+$env | table -e
+cd soul/
+ls
+$env | table -e
+which direnv
+sudo pacman -Syu direnv
+direnv
+which direnv
+direnv export json | from json | default {} | load-env
+ls
+rm -rf env/
+ls
+python -m venv .venv<\n>
+direnv allow
+layout python
+sudo pacman -Syu layout
+ls
+nvim .envrc
+direnv allow
+direnv
+direnv status
+cd ..
+cd soul/
+direnv export json | from json | default {} | load-env
+ls
+ls -al
+ls
+nvim .dotfiles/.config/nushell/config.nu
+cd ~
+ls
+cd soul/
+cd ~
+cd .dotfiles/
