@@ -207,3 +207,72 @@ git commit -m 'firenvim'
 git push
 cd ~
 cd .dotfiles/
+git add .
+git commit -m 'remove firenvim'
+git push
+:q
+nvim
+wsl
+ls
+curl http://localhost:5600.con
+curl http://localhost:5600/
+nvim
+mkdir fcc
+cd fcc
+mkdir html
+cd html/
+nvim .
+nvim
+nvim .dotfiles/.config/nvim/
+cd .dotfiles/.config/nvim/
+ls
+git add .
+git commit -m 'hi'
+git push
+nvim .
+cd ~
+cd .dotfiles/
+git fetch
+git pull
+nvim
+sudo pacman -Syu ollama
+ollama --version
+ollama
+ollama serve
+ollama -v
+ollama list
+ollama.service
+ollama serve
+ollama run deepseek-r1:1.5b
+ollama list
+ollama -v
+ollama
+ollama pull
+ollama run deepseek-r1:1.5b
+ls
+ls -al
+cd .dotfiles/
+nvim .tmux.conf
+stow .tmux.conf
+ls ~ -al
+cd ..
+ls -al
+cd .dotfiles/
+stow . --adopt
+cd ..
+ls -al
+tmux source-file .tmux.conf
+ollama serve
+tmux
+nvim .tmux.conf
+tmux source-file .tmux.conf
+tmux
+tmux attach
+tmux
+nvim .tmux.conf
+tmux
+nvim .tmux.conf
+tmux
+nvim .tmux.conf
+tmux
+cd .dotfiles/
