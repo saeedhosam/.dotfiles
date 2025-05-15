@@ -276,3 +276,25 @@ tmux
 nvim .tmux.conf
 tmux
 cd .dotfiles/
+git add .
+git commit -m 'hi'
+git push
+ls
+git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/.tmux/plugins/tpm
+stow . --adopt
+cd ..
+ls
+ls -al
+cd .tmux
+ls
+cd ..
+nvim .tmux.conf
+ollama list
+ollama run
+ollama
+ollama -h
+ollama run deepseek-r1:1.5b
+ollama serve
+cd .dotfiles/
+git add .
+nvim .
