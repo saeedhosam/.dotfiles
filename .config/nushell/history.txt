@@ -424,3 +424,52 @@ ls
 cd soul/
 cd ~
 cd .dotfiles/
+hi
+rofi drun
+rofi -show drun
+sudo pacman -Syu nerd-fonts
+ls
+nvim .dotfiles/.config/alacritty/alacritty.toml
+nerd-fonts
+nerd
+fc-list | lines | filter {|line| $line | str contains "Nerd"} | str trim | uniq
+sudo pacman -Syu tmux
+nvim .dotfiles/.config/alacritty/alacritty.toml
+ls
+nvim .dotfiles/.config/alacritty/alacritty.toml
+ls
+nvim .dotfiles/.config/alacritty/alacritty.toml
+ls
+ls .config/
+nvim .dotfiles/.config/fontconfig/fonts.conf
+mkdir .dotfiles/.config/fontconfig
+nvim .dotfiles/.config/fontconfig/fonts.conf
+sudo pacman -S ttf-apple-emoji ttf-dejavu ttf-cascadia-code ttf-opensans noto-fonts
+sudo pacman -S ttf-dejavu ttf-cascadia-code ttf-opensans noto-fonts
+reboot
+ls
+nvim .dotfiles/.config/alacritty/alacritty.toml
+ls
+sudo pacman -Syu foot
+foot
+nvim .dotfiles/.config/alacritty/alacritty.toml
+sudo pacman -Syu ghostty
+ghostty
+echo $SHELL
+echo $env.SHELL<\n>
+ghostty
+ghostty
+ls
+nvim
+:qa
+nvim .config/hypr/hyprland.conf
+ls
+ls .config/
+mkdir .dotfiles/.config/ghostty
+cd .dotfiles/
+stow . --adopt
+cd ..
+nvim .config/ghostty
+ls
+ls .config/
+cd .dotfiles/

@@ -1,5 +1,5 @@
 [general]
-working_directory = "C:/Users/makym"
+working_directory = "~"
 
 [window]
 dynamic_padding = true
@@ -8,7 +8,7 @@ opacity = 0.9
 startup_mode = "Fullscreen"
 
 [terminal]
-shell = { program = "cmd.exe", args = ["/c", "wsl ~ && nu"] }
+shell = { program = "nu", args = [] }
 
 [mouse]
 hide_when_typing = true
@@ -17,15 +17,15 @@ hide_when_typing = true
 size = 12.0
 
 [font.normal]
-family = "CaskaydiaCove Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "CaskaydiaCove Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "CaskaydiaCove Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Italic"
 
 
