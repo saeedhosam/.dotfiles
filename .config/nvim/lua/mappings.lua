@@ -7,42 +7,30 @@ map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
-map('n', '<M-y>', '<cmd>vsplit<CR>')
-map('n', '<M-x>', '<cmd>split<CR>')
 map('n', '<M-a>', '<C-W>H')
 map('n', '<M-s>', '<C-W>J')
 map('n', '<M-w>', '<C-W>K')
 map('n', '<M-d>', '<C-W>L')
 
-map('n', '<C-d>', '<C-d>zz')
-map('n', '<C-u>', '<C-u>zz')
-
 map('n', ';', ':')
 
-map("n", "<leader>tt", ":lua require('base46').toggle_transparency()<CR>", { noremap = true, silent = true, desc = "Toggle Background Transparency" })
 
 -- tabufline
 map('n', '<M-o>', '<cmd>tabnext<CR>')
 map('n', '<M-i>', '<cmd>tabprevious<CR>')
 
-map('n', '<M-l>', function()
+map('n', '<M-.>', function()
     require('nvchad.tabufline').next()
 end, { desc = 'buffer goto next' })
 
-map('n', '<M-h>', function()
+map('n', '<M-,>', function()
     require('nvchad.tabufline').prev()
 end, { desc = 'buffer goto prev' })
 
-map('n', '<M-e>', '<C-w>q') -- close window
-map('n', '<M-q>', function() -- close buffer
+map('n', '<M-z>', '<C-w>q') -- close window
+map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'buffer close' })
-
--- resizing, remember them as making the window 'smaller' or 'larger'
-map('n', '<M-,>', '<C-w>5<')
-map('n', '<M-.>', '<C-w>5>')
-map('n', "<M-'>", '<C-W>+')
-map('n', '<M-/>', '<C-W>-')
 
 map('n', '<leader>x', '<cmd>so<CR>')
 map('n', '<leader>f', function()
@@ -100,7 +88,7 @@ map({ 'n', 't' }, '<M-n>', function()
     require('nvchad.term').toggle { pos = 'sp', id = 'htoggleTerm' }
 end, { desc = 'terminal toggleable horizontal term' })
 
-map({ 'n', 't' }, '<M-i>', function()
+map({ 'n', 't' }, '<M-\'>', function()
     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
 end, { desc = 'terminal toggle floating term' })
 
