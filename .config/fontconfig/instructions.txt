@@ -1,0 +1,1 @@
+sudo pacman -S ttf-dejavu ttf-cascadia-code ttf-opensans noto-fonts

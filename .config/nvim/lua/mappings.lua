@@ -1,8 +1,10 @@
 local map = vim.keymap.set
-map('n', '<C-[>', '<cmd>noh<CR>')
 
--- nvim-tree
+-- Essentials
+map('n', '<C-[>', '<cmd>noh<CR>')
+map('n', ';', ':')
 map('n', '\\', '<cmd>NvimTreeToggle<CR>', { desc = 'toggle nvim tree' })
+-- Windows & buffers
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
@@ -11,13 +13,21 @@ map('n', '<M-a>', '<C-W>H')
 map('n', '<M-s>', '<C-W>J')
 map('n', '<M-w>', '<C-W>K')
 map('n', '<M-d>', '<C-W>L')
-
-map('n', ';', ':')
-
-
--- tabufline
-map('n', '<M-o>', '<cmd>tabnext<CR>')
-map('n', '<M-i>', '<cmd>tabprevious<CR>')
+map('n', '<M-z>', '<C-w>q')
+map('n', '<leader>x', '<cmd>so<CR>')
+map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
+-- Telescope
+local builtin = require 'telescope.builtin'
+map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+map('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
+map('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+map('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+map('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+map('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
+map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
 map('n', '<M-.>', function()
     require('nvchad.tabufline').next()
@@ -27,30 +37,13 @@ map('n', '<M-,>', function()
     require('nvchad.tabufline').prev()
 end, { desc = 'buffer goto prev' })
 
-map('n', '<M-z>', '<C-w>q') -- close window
 map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'buffer close' })
 
-map('n', '<leader>x', '<cmd>so<CR>')
 map('n', '<leader>f', function()
     require('conform').format { lsp_fallback = true }
 end, { desc = 'general format file' })
-
--- Telescope
-local builtin = require 'telescope.builtin'
-
-map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-map('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-
-map('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-map('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-map('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-map('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
 -- Slightly advanced example of overriding default behavior and theme
 map('n', '<leader>/', function()
@@ -76,9 +69,6 @@ map('n', '<leader>st', function()
     require('nvchad.themes').open()
 end)
 
--- terminal
-map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
-
 -- toggleable
 map({ 'n', 't' }, '<M-p>', function()
     require('nvchad.term').toggle { pos = 'vsp', id = 'vtoggleTerm' }
@@ -91,7 +81,6 @@ end, { desc = 'terminal toggleable horizontal term' })
 map({ 'n', 't' }, '<M-\'>', function()
     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
 end, { desc = 'terminal toggle floating term' })
-
 
 -- obsidian
 vim.keymap.set("n", "<leader>so", function()
