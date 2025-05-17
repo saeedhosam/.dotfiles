@@ -16,6 +16,12 @@ map('n', '<M-d>', '<C-W>L')
 map('n', '<M-z>', '<C-w>q')
 map('n', '<leader>x', '<cmd>so<CR>')
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
+map('n', '<M-.>', function()
+    require('nvchad.tabufline').next()
+end, { desc = 'buffer goto next' })
+map('n', '<M-,>', function()
+    require('nvchad.tabufline').prev()
+end, { desc = 'buffer goto prev' })
 -- Telescope
 local builtin = require 'telescope.builtin'
 map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
@@ -29,13 +35,6 @@ map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
-map('n', '<M-.>', function()
-    require('nvchad.tabufline').next()
-end, { desc = 'buffer goto next' })
-
-map('n', '<M-,>', function()
-    require('nvchad.tabufline').prev()
-end, { desc = 'buffer goto prev' })
 
 map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
