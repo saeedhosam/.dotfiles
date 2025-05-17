@@ -39,8 +39,8 @@ $menu = rofi -show run
 # Or execute your favorite apps at launch like this:
 
 exec-once = waybar
-exec = swww-daemon
 exec = python ~/.config/hypr/scripts/wallpaper.py
+
 
 #############################
 ### ENVIRONMENT VARIABLES ###
@@ -48,8 +48,8 @@ exec = python ~/.config/hypr/scripts/wallpaper.py
 
 # See https://wiki.hyprland.org/Configuring/Environment-variables/
 
-env = XCURSOR_SIZE,24
-env = HYPRCURSOR_SIZE,24
+env = XCURSOR_SIZE,18
+env = HYPRCURSOR_SIZE,18
 
 
 ###################
