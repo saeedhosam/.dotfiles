@@ -3,8 +3,7 @@ import random
 import subprocess
 import time
 
-WALL_DIR = os.path.expanduser("~/wallpapers")
-
+WALL_DIR = os.path.expanduser("~/wallpapers/content/")
 
 def is_daemon_running():
     return subprocess.run(["pgrep", "swww-daemon"], stdout=subprocess.DEVNULL).returncode == 0
