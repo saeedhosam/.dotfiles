@@ -3,6 +3,7 @@
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
+
 $env.config = {
   hooks: {
     pre_prompt: [{ ||
@@ -104,7 +105,7 @@ let config = {
   use_ansi_coloring: true
   filesize_format: "b" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
 
-  edit_mode: emacs # vi
+  edit_mode: vi
   max_history_size: 10000
   log_level: error
 }
