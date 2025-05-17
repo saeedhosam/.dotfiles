@@ -18,8 +18,8 @@ while True:
         pic = os.path.join(WALL_DIR, random.choice(pics))
         subprocess.run([
             "swww", "img", pic,
-            "--transition-type", "any",
+            "--transition-type", "fade",
             "--transition-fps", "60",
-            "--transition-duration", "2"
+            "--transition-duration", "5"
         ])
     time.sleep(1800)
