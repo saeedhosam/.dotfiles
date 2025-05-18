@@ -1,5 +1,6 @@
 (deflisten workspaces_eww_string "scripts/workspace")
 (defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
+
 ;; TODO: do the special workspace thingy
 
 ;; Widgets
