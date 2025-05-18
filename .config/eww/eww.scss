@@ -1,0 +1,20 @@
+// Reset default GTK styles for Eww
+* {
+  all: unset;
+}
+
+.bar-container {
+  background-color: #1e1e2e; // A dark color (e.g., Catppuccin Mocha Base)
+  color: #cdd6f4;          // A light text color (e.g., Catppuccin Mocha Text)
+  font-family: "JetBrainsMono Nerd Font", monospace; // Make sure you have a Nerd Font
+  font-size: 14px;
+  padding: 0px 10px; // Horizontal padding for the bar
+}
+
+.workspaces-widget, .clock-widget {
+  padding: 5px 0px; // Vertical padding for the content inside the widgets
+}
+
+.workspaces-widget label, .clock-widget label {
+  // Specific styling for labels if needed
+}

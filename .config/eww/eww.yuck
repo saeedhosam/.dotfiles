@@ -1,0 +1,36 @@
+;; Global Variables
+;; Poll for the active Hyprland workspace ID every 1 second
+(deflisten hypr_workspace
+ "bash ~/.config/eww/scripts/workspace-listener.sh")
+
+;; Poll for the current time every 5 seconds
+(defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
+
+
+;; Widgets
+(defwidget workspaces []
+  (box :class "workspaces-widget" :halign "start" :valign "center"
+    (label :text "󰣇 ${hypr_workspace}"))) ;; 󰣇 is a Nerd Font icon for workspace
+
+(defwidget clock []
+  (box :class "clock-widget" :halign "end" :valign "center"
+    (label :text "${current_time}"))) ;;  is a Nerd Font icon for clock
+  
+
+;; Window Definition
+(defwindow top_bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "30px"
+                      :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :namespace "eww-bar"
+  (centerbox :orientation "h" :class "bar-container"
+    (workspaces)
+    (box) ;; Empty center box
+    (clock)))
+  
+
