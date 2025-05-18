@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+# --- Configuration ---
+TOTAL_WORKSPACES=10
+DEFAULT_ICON=""
+FOCUSED_ICON=""
+
+# --- Global State ---
+declare -gA WORKSPACE_WINDOWS # Stores window count per workspace ID
+declare -g FOCUSED_WORKSPACE_ID # Stores the ID of the currently focused workspace
+
+# --- Functions ---
+
+# Fetches ONLY the focused workspace ID - VERY FAST
+update_focused_id() {
+    # For pure workspace switching events, `activeworkspace` is usually sufficient and fastest.
+    # If you have complex multi-monitor focus issues, you might revert to the
+    # `hyprctl -j monitors | jq '.[] | select(.focused) | .activeWorkspace.id'`
+    # approach, but it's slightly slower.
+    local new_focused_id
+    new_focused_id=$(hyprctl activeworkspace -j | jq '.id')
+    if [[ -n "$new_focused_id" && "$new_focused_id" != "null" ]]; then
+        FOCUSED_WORKSPACE_ID="$new_focused_id"
+    fi
+}
+
+# Fetches window counts for ALL workspaces
+update_window_counts() {
+    WORKSPACE_WINDOWS=() # Re-initialize
+    while read -r id windows; do
+        if [[ -n "$id" && "$id" != "null" ]]; then
+            WORKSPACE_WINDOWS[$id]=$windows
+        fi
+    done < <(hyprctl -j workspaces | jq -r '.[] | "\(.id) \(.windows)"')
+}
+
+# Generates the EWW widget string using current global state
+# NO hyprctl calls here - uses pre-fetched data
+generate_eww_widgets() {
+    local buttons_string=""
+    for i in $(seq 1 "$TOTAL_WORKSPACES"); do
+        local current_ws_id=$i
+        local icon=$DEFAULT_ICON
+        local class="workspace-button"
+
+        if [[ -v WORKSPACE_WINDOWS[$current_ws_id] && "${WORKSPACE_WINDOWS[$current_ws_id]}" -gt 0 ]]; then
+            class+=" occupied"
+        fi
+
+        if [[ "$current_ws_id" -eq "$FOCUSED_WORKSPACE_ID" ]]; then
+            icon=$FOCUSED_ICON
+            class+=" focused"
+        fi
+
+        buttons_string+="(button :onclick \"hyprctl dispatch workspace $current_ws_id\" :class \"$class\" \"$icon\")"
+    done
+    echo "(box :class \"workspaces-box\" :orientation \"h\" :spacing 0 :space-evenly false $buttons_string)"
+}
+
+# --- Main Logic ---
+
+# Initial full data fetch and display
+update_focused_id      # Get initial focused
+update_window_counts   # Get initial window counts
+generate_eww_widgets   # Output initial widgets
+
+# Listen for Hyprland events
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | \
+    while read -r line; do
+        if [[ $line == "workspace>>"* ]]; then
+            update_focused_id      # Get initial focused
+            generate_eww_widgets   # Output initial widgets
+        fi
+    done
