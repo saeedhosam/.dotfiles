@@ -1,35 +1,29 @@
-;; Global Variables
-;; Listener for the dynamically generated workspace EWW widget string
 (deflisten workspaces_eww_string "scripts/workspace")
-
-;; Poll for the current time every 5 seconds
 (defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
 
 
 ;; Widgets
 (defwidget workspaces []
-  ;; Renders the EWW widget string produced by the 'scripts/workspace'
   (literal :content workspaces_eww_string))
 
 (defwidget clock []
   (box :class "clock-widget" :halign "end" :valign "center"
     (label :text "${current_time}")))
 
-
 ;; Window Definition
 (defwindow top_bar
   :monitor 0
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "100%"
+                      :width "95%"
                       :height "30px"
                       :anchor "top center")
-  :stacking "fg"
+  :stacking "bg"
   :exclusive true
   :namespace "eww-bar"
   (centerbox :orientation "h" :class "bar-container"
-    (workspaces)                            ;; Left content
-    (box :hexpand true :vexpand true)       ;; Center content (empty, expands to fill space)
-    (clock))                                 ;; Right content
+    (workspaces)
+    (box :hexpand true :vexpand true)
+    (clock)))
   
- )
+ 
