@@ -62,17 +62,17 @@ map('n', '<leader>st', function()
 end)
 
 -- toggleable
-map({ 'n', 't' }, '<M-\'>', function()
+map({ 'n', 't' }, "<M-'>", function()
     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
 end, { desc = 'terminal toggle floating term' })
 
 -- obsidian
-vim.keymap.set("n", "<leader>so", function()
-  local client = require("obsidian").get_client()
-  local vault_path = tostring(client:vault_root())
+vim.keymap.set('n', '<leader>so', function()
+    local client = require('obsidian').get_client()
+    local vault_path = tostring(client:vault_root())
 
-  require("telescope.builtin").find_files({
-    prompt_title = "Search Obsidian Vault",
-    search_dirs = { vault_path },
-  })
-end, { desc = "Search current Obsidian vault" })
+    require('telescope.builtin').find_files {
+        prompt_title = 'Search Obsidian Vault',
+        search_dirs = { vault_path },
+    }
+end, { desc = 'Search current Obsidian vault' })
