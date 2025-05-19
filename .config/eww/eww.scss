@@ -6,35 +6,35 @@
 }
 
 .bar-container {
-  background-color: rgba(30, 30, 46, 0.9); 
+  background-color: rgba(30, 30, 46, 0.8);
   padding: 0px 10px;
-  border-radius: 10px; 
+  border-radius: 20px;
+}
+
+.clock-widget {
+  padding: 5px 5px;
 }
 
 .workspaces-box {
-  padding: 2px 0px; 
+  padding: 5px 5px;
 }
 
 .workspace-button {
-  padding: 0 6px;   
-  margin: 0 2px;    
-  color: #A8DCD9;    
-  border-radius: 5px; 
-  transition: all 0.2s ease-in-out; 
+  padding: 0 5px;
+  margin: 0 0px;
+  color: #a8dcd9;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #60435F; 
+    background-color: #60435f;
   }
 }
 
 .workspace-button.occupied {
-  color: #cad3f5; 
+  color: #cad3f5;
 }
 
 .workspace-button.focused {
-  color: #8aadf4; 
-}
-
-.clock-widget {
-  padding: 5px 0px; 
+  color: #8aadf4;
 }
