@@ -19,11 +19,11 @@ return {
         workspaces = {
             {
                 name = 'college',
-                path = '~/OneDrive/Documents/GitHub/obsidian/college',
+                path = '~/obsidian/college',
             },
             {
                 name = 'cs',
-                path = '~/OneDrive/Documents/GitHub/obsidian/cs',
+                path = '~/obsidian/cs',
             },
         },
     },

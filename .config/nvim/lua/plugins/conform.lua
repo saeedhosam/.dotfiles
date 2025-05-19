@@ -5,9 +5,9 @@ return {
             lua = { 'stylua' },
             python = { 'ruff' },
             scss = { 'prettier' },
+            markdown = { 'prettier' },
             bash = { 'shfmt' },
             sh = { 'shfmt' },
-            yuck = { 'yuckfmt' },
         },
     },
 }

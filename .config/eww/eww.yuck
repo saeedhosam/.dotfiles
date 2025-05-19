@@ -2,6 +2,7 @@
 ;; TODO: A battery of 100 frame animation that movies 1 frame for every 1 percent
 ;; TODO: Move the date to be a hover over the time, with a calender look
 ;; TODO: Make the mute and unmute icons, but with a deflisten not defpoll
+;; TODO: Make it that when the special workspace is opened, a glasses icon appear in the middle of the bar
 
 ;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
