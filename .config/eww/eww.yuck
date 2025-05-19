@@ -1,7 +1,12 @@
+;; TODO: Do the special workspace thingy
+;; TODO: A battery of 100 frame animation that movies 1 frame for every 1 percent
+;; TODO: Move the date to be a hover over the time, with a calender look
+;; TODO: Make the mute and unmute icons, but with a deflisten not defpoll
+
+;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
 (defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
 
-;; TODO: do the special workspace thingy
 
 ;; Widgets
 (defwidget workspaces []
@@ -11,13 +16,14 @@
   (box :class "clock-widget" :halign "end" :valign "center"
     (label :text "${current_time}")))
 
+
 ;; Window Definition
 (defwindow top_bar
   :monitor 0
   :geometry (geometry :x "0%"
-                      :y "0%"
+                      :y "0.5%"
                       :width "95%"
-                      :height "30px"
+                      :height "10px"
                       :anchor "top center")
   :stacking "bg"
   :exclusive true

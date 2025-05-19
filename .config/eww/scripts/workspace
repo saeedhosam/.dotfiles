@@ -8,7 +8,7 @@ YES_FOCUS_NO_WINDOW="assets/fnw.svg"
 YES_FOCUS_YES_WINDOW="assets/fw.svg"
 
 # --- Global State ---
-declare -gA WORKSPACE_WINDOWS # Stores window count per workspace ID
+declare -gA WORKSPACE_WINDOWS   # Stores window count per workspace ID
 declare -g FOCUSED_WORKSPACE_ID # Stores the ID of the currently focused workspace
 
 # --- Functions ---
@@ -41,26 +41,26 @@ get_workspace_icon() {
     local ws_id=$1
     local has_windows=0
     local is_focused=0
-    
+
     # Check if workspace has windows
     if [[ -v WORKSPACE_WINDOWS[$ws_id] && "${WORKSPACE_WINDOWS[$ws_id]}" -gt 0 ]]; then
         has_windows=1
     fi
-    
+
     # Check if workspace is focused
     if [[ "$ws_id" -eq "$FOCUSED_WORKSPACE_ID" ]]; then
         is_focused=1
     fi
-    
+
     # Select icon based on conditions
     if [[ "$is_focused" -eq 1 && "$has_windows" -eq 1 ]]; then
-        echo "$YES_FOCUS_YES_WINDOW"    # Focused with windows
+        echo "$YES_FOCUS_YES_WINDOW" # Focused with windows
     elif [[ "$is_focused" -eq 1 && "$has_windows" -eq 0 ]]; then
-        echo "$YES_FOCUS_NO_WINDOW"     # Focused without windows
+        echo "$YES_FOCUS_NO_WINDOW" # Focused without windows
     elif [[ "$is_focused" -eq 0 && "$has_windows" -eq 1 ]]; then
-        echo "$NO_FOCUS_YES_WINDOW"     # Not focused but has windows
+        echo "$NO_FOCUS_YES_WINDOW" # Not focused but has windows
     else
-        echo "$NO_FOCUS_NO_WINDOW"      # Not focused and no windows
+        echo "$NO_FOCUS_NO_WINDOW" # Not focused and no windows
     fi
 }
 
@@ -72,20 +72,20 @@ generate_eww_widgets() {
         local current_ws_id=$i
         local has_windows=0
         local class="workspace-button"
-        
+
         # Determine class based on state
         if [[ -v WORKSPACE_WINDOWS[$current_ws_id] && "${WORKSPACE_WINDOWS[$current_ws_id]}" -gt 0 ]]; then
             class+=" occupied"
             has_windows=1
         fi
-        
+
         if [[ "$current_ws_id" -eq "$FOCUSED_WORKSPACE_ID" ]]; then
             class+=" focused"
         fi
-        
+
         # Get appropriate icon
         local icon_path=$(get_workspace_icon "$current_ws_id")
-        
+
         # Use the icon path in an image widget - requires EWW to support images
         buttons_string+="(button :onclick \"hyprctl dispatch workspace $current_ws_id\" :class \"$class\" (image :path \"$icon_path\" :image-width 23 :image-height 23))"
     done
@@ -95,35 +95,34 @@ generate_eww_widgets() {
 # --- Main Logic ---
 
 # Initial full data fetch and display
-update_focused_id      # Get initial focused
-update_window_counts   # Get initial window counts
-generate_eww_widgets   # Output initial widgets
+update_focused_id    # Get initial focused
+update_window_counts # Get initial window counts
+generate_eww_widgets # Output initial widgets
 
 # Listen for Hyprland events
-socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | \
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock |
     while read -r line; do
         # Handle different event types
         case "${line%%>>*}" in
-            workspace)
-                # Workspace changed - update focus
-                update_focused_id
-                generate_eww_widgets
-                ;;
-            createworkspace|destroyworkspace|moveworkspace)
-                # Workspace created/destroyed/moved - update everything
-                update_focused_id
-                update_window_counts
-                generate_eww_widgets
-                ;;
-            openwindow|closewindow|movewindow)
-                # Window opened/closed/moved - update window counts
-                update_window_counts
-                generate_eww_widgets
-                ;;
-            *)
-                # For other events, don't update
-                continue
-                ;;
+        workspace)
+            # Workspace changed - update focus
+            update_focused_id
+            generate_eww_widgets
+            ;;
+        createworkspace | destroyworkspace | moveworkspace)
+            # Workspace created/destroyed/moved - update everything
+            update_focused_id
+            update_window_counts
+            generate_eww_widgets
+            ;;
+        openwindow | closewindow | movewindow)
+            # Window opened/closed/moved - update window counts
+            update_window_counts
+            generate_eww_widgets
+            ;;
+        *)
+            # For other events, don't update
+            continue
+            ;;
         esac
     done
-
