@@ -10,8 +10,6 @@ $env.config = {
       if (which direnv | is-empty) {
         return
       }
-
-
       direnv export json | from json | default {} | load-env
       if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
         $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
@@ -92,21 +90,11 @@ let base16_theme = {
 # now let's apply our regular config settings but also apply the "color_config:" theme that we specified above.
 
 let config = {
-  filesize_metric: true
-
-  table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
-  use_ls_colors: true
   color_config: $base16_theme # <-- this is the theme
-
-  use_grid_icons: true
   footer_mode: always #always, never, number_of_rows, auto
-  animate_prompt: false
   float_precision: 2
   use_ansi_coloring: true
-  filesize_format: "b" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
-
   edit_mode: vi
-  max_history_size: 10000
-  log_level: error
 }
 
+$env.config = ($env.config | merge $config)
