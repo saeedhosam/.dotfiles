@@ -1,8 +1,6 @@
-;; TODO: Do the special workspace thingy
 ;; TODO: A battery of 100 frame animation that movies 1 frame for every 1 percent
 ;; TODO: Move the date to be a hover over the time, with a calender look
 ;; TODO: Make the mute and unmute icons, but with a deflisten not defpoll
-;; TODO: Make it that when the special workspace is opened, a glasses icon appear in the middle of the bar
 
 ;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
@@ -12,17 +10,23 @@
 
 ;; Widgets
 (defwidget workspaces []
-  (literal :content workspaces_eww_string))
+  (literal 
+        :content workspaces_eww_string
+        :visible { special_active_eww == "false"}))
 
 (defwidget special_workspace_icon []
   (box :class "special-icon-container" :halign "center" :valign "center" :hexpand true
        (image :path "./assets/spy.svg"
-              :image-width 24
+              :image-width 1800
               :image-height 24
-              :visible {special_active_eww == "true"})))
+              :visible { special_active_eww == "true"})))
 
 (defwidget clock []
-  (box :class "clock-widget" :halign "end" :valign "center"
+  (box 
+        :class "clock-widget" 
+        :halign "end" 
+        :valign "center"
+        :visible { special_active_eww == "false"}
     (label :text "${current_time}")))
 
 
@@ -32,7 +36,7 @@
   :geometry (geometry :x "0%"
                       :y "0.5%"
                       :width "95%"
-                      :height "10px"
+                      :height "33px"
                       :anchor "top center")
   :stacking "bg"
   :exclusive true

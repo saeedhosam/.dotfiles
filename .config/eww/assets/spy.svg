@@ -1,7 +1,7 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M17 13a4 4 0 1 1 0 8c-2.142 0-4-1.79-4-4h-2a4 4 0 1 1-.535-2h3.07A3.998 3.998 0 0 1 17 13zM2 12v-2h2V7a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v3h2v2H2z"/> </g> </g>
-</svg>
+<svg width="1800" height="12" viewBox="0 0 1800 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="5" x2="860" y2="5" stroke="white" stroke-width="2"/>
+<line x1="940" y1="5" x2="1800" y2="5" stroke="white" stroke-width="2"/>
+<circle cx="908" cy="6" r="5" stroke="white" stroke-width="2"/>
+<circle cx="892" cy="6" r="5" stroke="white" stroke-width="2"/>
+<line x1="903" y1="6" x2="897" y2="6" stroke="white" stroke-width="2"/>
+</svg>
