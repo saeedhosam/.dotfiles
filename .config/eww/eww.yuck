@@ -6,12 +6,20 @@
 
 ;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
+(deflisten special_active_eww :initial "false" "scripts/specialworkspace")
 (defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
 
 
 ;; Widgets
 (defwidget workspaces []
   (literal :content workspaces_eww_string))
+
+(defwidget special_workspace_icon []
+  (box :class "special-icon-container" :halign "center" :valign "center" :hexpand true
+       (image :path "./assets/spy.svg"
+              :image-width 24
+              :image-height 24
+              :visible {special_active_eww == "true"})))
 
 (defwidget clock []
   (box :class "clock-widget" :halign "end" :valign "center"
@@ -29,9 +37,10 @@
   :stacking "bg"
   :exclusive true
   :namespace "eww-bar"
-  (centerbox :orientation "h" :class "bar-container"
-    (workspaces)
-    (box :hexpand true :vexpand true)
+  ;; Conditionally add 'special-active-bar' class to the centerbox
+  (centerbox :orientation "h"
+             :class "bar-container" ;; <<< MODIFIED LINE 1: Keep base class for padding, border-radius etc.
+             ;; <<< MODIFIED LINE 2: Control background-color directly
+             :style "background-color: ${special_active_eww == "true" ? "black" : "rgba(30, 30, 46, 0.8)"};"    (workspaces)
+    (special_workspace_icon)
     (clock)))
-  
- 
