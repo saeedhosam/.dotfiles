@@ -37,10 +37,9 @@
   :stacking "bg"
   :exclusive true
   :namespace "eww-bar"
-  ;; Conditionally add 'special-active-bar' class to the centerbox
   (centerbox :orientation "h"
-             :class "bar-container" ;; <<< MODIFIED LINE 1: Keep base class for padding, border-radius etc.
-             ;; <<< MODIFIED LINE 2: Control background-color directly
-             :style "background-color: ${special_active_eww == "true" ? "black" : "rgba(30, 30, 46, 0.8)"};"    (workspaces)
+             :class "bar-container" 
+             :style "background-color: ${special_active_eww == "true" ? "black" : "rgba(30, 30, 46, 0.8)"};"
+    (workspaces)
     (special_workspace_icon)
     (clock)))
