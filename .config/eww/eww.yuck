@@ -1,6 +1,7 @@
 ;; TODO: A battery of 100 frame animation that movies 1 frame for every 1 percent
 ;; TODO: Move the date to be a hover over the time, with a calender look
 ;; TODO: Make the mute and unmute icons, but with a deflisten not defpoll
+;; TODO: Add a sleep and turnoff button but from inside a dropdown menu
 
 ;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
