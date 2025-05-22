@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 
-# --- Configuration ---
 TOTAL_WORKSPACES=10
 NO_FOCUS_NO_WINDOW="assets/nfnw.svg"
 NO_FOCUS_YES_WINDOW="assets/nfw.svg"
 YES_FOCUS_NO_WINDOW="assets/fnw.svg"
 YES_FOCUS_YES_WINDOW="assets/fw.svg"
 
-# --- Global State ---
-declare -gA WORKSPACE_WINDOWS   # Stores window count per workspace ID
-declare -g FOCUSED_WORKSPACE_ID # Stores the ID of the currently focused workspace
+declare -gA WORKSPACE_WINDOWS
+declare -g FOCUSED_WORKSPACE_ID
 
-# --- Functions ---
 
-# Fetches ONLY the focused workspace ID - VERY FAST
 update_focused_id() {
     # For pure workspace switching events, `activeworkspace` is usually sufficient and fastest.
     # If you have complex multi-monitor focus issues, you might revert to the
