@@ -5,9 +5,9 @@
 
 ;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
-(deflisten special_active_eww :initial "false" "scripts/specialworkspace")
+;; (deflisten special_active_eww :initial "false" "scripts/specialworkspace")
 (deflisten music_title_author "scripts/music --title-author")
-(deflisten music_art "scripts/music --art")
+(deflisten music_album "scripts/music --album")
 (defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
 
 
@@ -18,16 +18,14 @@
         :visible { special_active_eww == "false"}))
 
 (defwidget music []
- (box
+ (tooltip
     :class "music"
     :halign "start"
     :valign "center"
     :spacing 23
     :space-evenly false
-    (label :text "󰝚  ${music_title_author}")))
-    
-    
-    
+    (label :class "music-tooltip" :text "󰝚  ${music_album}")
+    (label :text "${music_title_author}")))
 
 ;; (defwidget special_workspace_icon []
 ;;  (box :class "special-icon-container" :halign "center" :valign "center" :hexpand true
