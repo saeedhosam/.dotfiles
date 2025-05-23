@@ -6,6 +6,8 @@
 ;; Declaractions
 (deflisten workspaces_eww_string "scripts/workspace")
 (deflisten special_active_eww :initial "false" "scripts/specialworkspace")
+(deflisten music_title_author "scripts/music --title-author")
+(deflisten music_art "scripts/music --art")
 (defpoll current_time :interval "5s" "date +'%a %d %b · %H:%M'")
 
 
@@ -15,17 +17,31 @@
         :content workspaces_eww_string
         :visible { special_active_eww == "false"}))
 
-(defwidget special_workspace_icon []
-  (box :class "special-icon-container" :halign "center" :valign "center" :hexpand true
-       (image :path "./assets/spy.svg"
-              :image-width 1800
-              :image-height 24
-              :visible { special_active_eww == "true"})))
+(defwidget music []
+ (box
+    :class "music"
+    :halign "start"
+    :valign "center"
+    :spacing 23
+    :space-evenly false
+    (label :text "󰝚  ${music_title_author}")))
+    
+    
+    
+
+;; (defwidget special_workspace_icon []
+;;  (box :class "special-icon-container" :halign "center" :valign "center" :hexpand true
+;;       (image :path "./assets/spy.svg"
+;;              :image-width 1800
+;;              :image-height 24
+;;              :visible { special_active_eww == "true"})))
+
+     
 
 (defwidget clock []
-  (box 
+  (box
         :class "clock-widget" 
-        :halign "end" 
+        :halign "end"
         :valign "center"
         :visible { special_active_eww == "false"}
     (label :text "${current_time}")))
@@ -46,5 +62,5 @@
              :class "bar-container" 
              :style "background-color: ${special_active_eww == "true" ? "black" : "rgba(30, 30, 46, 0.8)"};"
     (workspaces)
-    (special_workspace_icon)
+    (music)
     (clock)))
