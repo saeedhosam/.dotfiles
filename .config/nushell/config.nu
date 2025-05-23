@@ -21,7 +21,7 @@ let config = {
   footer_mode: always #always, never, number_of_rows, auto
   float_precision: 2
   use_ansi_coloring: true
-  edit_mode: vi
+  # edit_mode: vi
 }
 
 $env.config = ($env.config | merge $config)
