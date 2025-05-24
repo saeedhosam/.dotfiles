@@ -24,17 +24,8 @@
     :valign "center"
     :spacing 23
     :space-evenly false
-    (label :class "music-tooltip" :text "${music_album}")
-    (label :text "󰝚  ${music_title_author}")))
-
-;; (defwidget special_workspace_icon []
-;;  (box :class "special-icon-container" :halign "center" :valign "center" :hexpand true
-;;       (image :path "./assets/spy.svg"
-;;              :image-width 1800
-;;              :image-height 24
-;;              :visible { special_active_eww == "true"})))
-
-     
+    (label :class "music-tooltip" :text "${music_album}" :visible { music_album != ""})
+    (label :text "󰝚  ${music_title_author}" :visible { music_title_author != ""})))
 
 (defwidget clock []
   (box
