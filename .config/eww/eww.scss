@@ -7,7 +7,7 @@
 
 .bar-container {
   background-color: rgba(30, 30, 46, 0.8);
-  padding: 0px 10px;
+  padding: 1px 10px;
   border-radius: 20px;
 }
 
@@ -26,21 +26,13 @@
 }
 
 .workspace-button {
-  padding: 0 5px;
+  padding: 0 3px;
   margin: 0 0px;
   color: #a8dcd9;
-  border-radius: 5px;
+  border-radius: 50%;
   transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: #60435f;
   }
-}
-
-.workspace-button.occupied {
-  color: #cad3f5;
-}
-
-.workspace-button.focused {
-  color: #8aadf4;
 }
