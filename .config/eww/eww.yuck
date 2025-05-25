@@ -14,8 +14,7 @@
 ;; Widgets
 (defwidget workspaces []
   (literal 
-        :content workspaces_eww_string
-        :visible { special_active_eww == "false"}))
+        :content workspaces_eww_string))
 
 (defwidget music []
  (tooltip
@@ -32,7 +31,6 @@
         :class "clock-widget" 
         :halign "end"
         :valign "center"
-        :visible { special_active_eww == "false"}
     (label :text "${current_time}")))
 
 
