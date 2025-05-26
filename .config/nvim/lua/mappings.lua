@@ -21,6 +21,7 @@ end, { desc = 'buffer goto prev' })
 map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'buffer close' })
+
 -- Telescope
 local builtin = require 'telescope.builtin'
 map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
