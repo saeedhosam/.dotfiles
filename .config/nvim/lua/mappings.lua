@@ -58,10 +58,10 @@ map('n', '<leader>st', function()
     require('nvchad.themes').open()
 end)
 
--- toggleable
-map({ 'n', 't' }, "<M-'>", function()
-    require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
-end, { desc = 'terminal toggle floating term' })
+-- ToggleTerm
+-- map({ 'n', 't' }, "<M-'>", function()
+--     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
+-- end, { desc = 'terminal toggle floating term' })
 
 -- obsidian
 vim.keymap.set('n', '<leader>so', function()
