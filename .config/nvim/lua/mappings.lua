@@ -4,6 +4,8 @@ local map = vim.keymap.set
 map('n', '<C-[>', '<cmd>noh<CR>')
 map('n', ';', ':')
 map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
+
+
 -- Windows & buffers
 map('n', '<M-a>', '<C-W>H')
 map('n', '<M-s>', '<C-W>J')
@@ -22,6 +24,7 @@ map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'buffer close' })
 
+
 -- Telescope
 local builtin = require 'telescope.builtin'
 map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
@@ -33,6 +36,7 @@ map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffer
 map('n', '<leader>f', function()
     require('conform').format { lsp_fallback = true }
 end, { desc = 'general format file' })
+
 
 -- Slightly advanced example of overriding default behavior and theme
 map('n', '<leader>/', function()
@@ -58,10 +62,9 @@ map('n', '<leader>st', function()
     require('nvchad.themes').open()
 end)
 
+
 -- ToggleTerm
--- map({ 'n', 't' }, "<M-'>", function()
---     require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }
--- end, { desc = 'terminal toggle floating term' })
+
 
 -- obsidian
 vim.keymap.set('n', '<leader>so', function()
