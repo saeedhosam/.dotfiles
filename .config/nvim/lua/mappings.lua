@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- Essentials
 map('n', '<C-[>', '<cmd>noh<CR>')
 map('n', ';', ':')
-map('n', '\\', '<cmd>NvimTreeToggle<CR>', { desc = 'toggle nvim tree' })
+map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
 -- Windows & buffers
 map('n', '<M-a>', '<C-W>H')
 map('n', '<M-s>', '<C-W>J')
