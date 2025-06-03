@@ -7,6 +7,7 @@ o.showmode = false
 
 opt.showbreak ='↪ '
 opt.linebreak = true
+opt.breakindent = true
 
 o.clipboard = 'unnamedplus'
 o.cursorline = true
