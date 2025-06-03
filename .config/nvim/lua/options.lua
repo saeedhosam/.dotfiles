@@ -5,6 +5,9 @@ local g = vim.g
 o.laststatus = 3
 o.showmode = false
 
+opt.showbreak ='↪ '
+opt.linebreak = true
+
 o.clipboard = 'unnamedplus'
 o.cursorline = true
 o.cursorlineopt = 'both'
