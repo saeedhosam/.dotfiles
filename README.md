@@ -2,4 +2,4 @@
 
 # Installed things
 
-`sudo pacman -Syu kdeconnect neovim git git-base`
+sudo pacman -Syu kdeconnect neovim git git-base dysk btop

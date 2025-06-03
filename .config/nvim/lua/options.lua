@@ -5,7 +5,7 @@ local g = vim.g
 o.laststatus = 3
 o.showmode = false
 
-opt.showbreak ='↪ '
+opt.showbreak = '↪ '
 opt.linebreak = true
 opt.breakindent = true
 
