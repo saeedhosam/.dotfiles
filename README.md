@@ -18,6 +18,15 @@ All the below is according to Arch.
   - package name: `filelight`
 - btop: like a task manager but advanced and with vim-like bindings
   - package name: `btop`
+- rofi
+- ghostty
+- flameshot
+- copyq
+- zathura: don't forget to make it the default viewier
+- Libreoffice
+- Qutebrowser: just experimenting it, it's good tho but needs time
+- Telegram
+- TickTick
 
 ## Full entry:
 
