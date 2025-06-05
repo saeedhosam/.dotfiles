@@ -46,8 +46,8 @@ return {
             end
             api.config.mappings.default_on_attach(bufnr)
             -- custom bindings
-            map('n', '|', api.tree.change_root_to_parent, opts 'Up')
-            map('n', 'z', api.tree.change_root_to_node, opts 'Down')
+            map('n', 'H', api.tree.change_root_to_parent, opts 'Up')
+            map('n', '.', api.tree.change_root_to_node, opts 'Down')
             map('n', '?', api.tree.toggle_help, opts 'Help')
             map('n', 'h', api.node.navigate.parent_close, opts 'Close Directory')
             map('n', 'L', api.node.open.preview, opts 'Open Preview')
