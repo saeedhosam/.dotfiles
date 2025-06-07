@@ -11,6 +11,8 @@ return {
             typescript = { 'prettier' },
             javascript = { 'prettier' },
             jsx = { 'prettier' },
+            tsx = { 'prettier' },
+            typescriptreact = { 'prettier' },
         },
     },
 }
