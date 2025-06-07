@@ -18,6 +18,12 @@
         :content workspaces_eww_string))
 
 (defwidget music []
+ (eventbox :onhover "${eww} update music_reveal=true"
+    :onhoverlost "${eww} update music_reveal=false"
+    (box :class "music" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+        (box :class))))
+
+(defwidget music []
  (tooltip
     :class "music"
     :halign "start"
