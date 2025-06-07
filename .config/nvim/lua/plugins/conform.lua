@@ -8,6 +8,9 @@ return {
             markdown = { 'prettier' },
             bash = { 'shfmt' },
             sh = { 'shfmt' },
+            typescript = { 'prettier' },
+            javascript = { 'prettier' },
+            jsx = { 'prettier' },
         },
     },
 }
