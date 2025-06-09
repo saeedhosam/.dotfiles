@@ -1,0 +1,5 @@
+[mgr]
+prepend_keymap = [
+  { on = "<C-[>", run = "quit", desc = "Exit the process" },
+  { on = "q", run = "noop", desc = "Disable default q key" },
+]

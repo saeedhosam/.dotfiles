@@ -13,6 +13,7 @@ return {
             jsx = { 'prettier' },
             tsx = { 'prettier' },
             typescriptreact = { 'prettier' },
+            toml = { 'taplo' },
         },
     },
 }

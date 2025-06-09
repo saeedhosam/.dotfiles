@@ -15,8 +15,11 @@ return {
     },
     config = function()
         local lspconfig = require 'lspconfig'
+
         -- add the lsp server using `lspconfig.<name>.setup {}`
         lspconfig.lua_ls.setup {}
         lspconfig.ts_ls.setup {}
+        lspconfig.marksman.setup {}
+        lspconfig.taplo.setup {}
     end,
 }
