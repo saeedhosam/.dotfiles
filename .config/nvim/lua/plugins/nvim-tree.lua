@@ -1,3 +1,4 @@
+if vim.g.disable_nvim_tree then return {} end
 dofile(vim.g.base46_cache .. 'nvimtree')
 return {
     'nvim-tree/nvim-tree.lua',
