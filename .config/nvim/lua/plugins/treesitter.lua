@@ -1,6 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { "nushell/tree-sitter-nu" },
+    dependencies = { 'nushell/tree-sitter-nu' },
     event = { 'BufReadPost', 'BufNewFile' },
     cmd = { 'TSInstall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
     build = ':TSUpdate',

@@ -41,7 +41,10 @@ o.splitright = true
 o.timeoutlen = 400
 o.undofile = true
 
-o.updatetime = 250
+o.updatetime = 0
+vim.cmd [[
+  autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+]]
 
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0

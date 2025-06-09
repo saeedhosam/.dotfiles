@@ -14,6 +14,9 @@ return {
         },
     },
     config = function()
-        require('lspconfig').lua_ls.setup {}
+        local lspconfig = require 'lspconfig'
+        -- add the lsp server using `lspconfig.<name>.setup {}`
+        lspconfig.lua_ls.setup {}
+        lspconfig.ts_ls.setup {}
     end,
 }
