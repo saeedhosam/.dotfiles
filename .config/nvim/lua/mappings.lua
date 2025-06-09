@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- Essentials
 map('n', '<C-[>', '<cmd>noh<CR>')
 map('n', ';', ':')
-map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
+-- map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
 
 -- j/k to move in wrapped lines
 map('n', 'j', 'gj', { noremap = true, silent = true })
@@ -17,16 +17,21 @@ map('n', '<M-d>', '<C-W>L')
 map('n', '<M-z>', '<C-w>q')
 map('n', '<leader>x', '<cmd>so<CR>')
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
-map('n', '<M-.>', function()
+map('n', '<A-.>', function()
     require('nvchad.tabufline').next()
 end, { desc = 'buffer goto next' })
-map('n', '<M-,>', function()
+map('n', '<A-,>', function()
     require('nvchad.tabufline').prev()
 end, { desc = 'buffer goto prev' })
+map('n', '<A-i>', function()
+    require('nvchad.tabufline').move_buf(-1)
+end, { desc = 'buffer goto next' })
+map('n', '<A-o>', function()
+    require('nvchad.tabufline').move_buf(1)
+end, { desc = 'buffer goto next' })
 map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'buffer close' })
-
 
 -- Telescope
 local builtin = require 'telescope.builtin'
@@ -39,7 +44,6 @@ map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffer
 map('n', '<leader>f', function()
     require('conform').format { lsp_fallback = true }
 end, { desc = 'general format file' })
-
 
 -- Slightly advanced example of overriding default behavior and theme
 map('n', '<leader>/', function()
@@ -65,9 +69,7 @@ map('n', '<leader>st', function()
     require('nvchad.themes').open()
 end)
 
-
 -- ToggleTerm
-
 
 -- obsidian
 vim.keymap.set('n', '<leader>so', function()
