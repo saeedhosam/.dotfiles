@@ -6,8 +6,9 @@ map('n', ';', ':')
 -- map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
 
 -- j/k to move in wrapped lines
-map('n', 'j', 'gj', { noremap = true, silent = true })
-map('n', 'k', 'gk', { noremap = true, silent = true })
+-- Actually jumping between lines became non-sensical, so not doing this is better
+-- map('n', 'j', 'gj', { noremap = true, silent = true })
+-- map('n', 'k', 'gk', { noremap = true, silent = true })
 
 -- Windows & buffers
 map('n', '<M-a>', '<C-W>H')

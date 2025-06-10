@@ -1,6 +1,7 @@
 # Workflow
 
 Editor: `neovim`
+Grass: `discord` for connecting with community (not yet I'm trying)
 Browser: `chrome` for general stuff, `qutebrowser` for reading documentation
 Notes: `obsidian`
 Bar and Widgets: `quickshell`
