@@ -3,9 +3,8 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { 'stylua' },
-            python = { 'black', 'ruff' },
             scss = { 'prettier' },
-            markdown = { 'prettier' },
+            markdown = { 'mdformat' },
             bash = { 'shfmt' },
             sh = { 'shfmt' },
             typescript = { 'prettier' },
