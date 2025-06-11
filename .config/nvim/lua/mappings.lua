@@ -16,7 +16,7 @@ map('n', '<M-s>', '<C-W>J')
 map('n', '<M-w>', '<C-W>K')
 map('n', '<M-d>', '<C-W>L')
 map('n', '<M-z>', '<C-w>q')
-map('n', '<leader>x', '<cmd>so<CR>')
+map('n', '<leader>x', '<cmd>so<CR>', { desc = 'Run file' })
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 
 map({ 'n', 'i' }, '<A-.>', function()
@@ -33,19 +33,18 @@ map({ 'n', 'i' }, '<A-o>', function()
 end, { desc = 'buffer goto next' })
 map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
-end, { desc = 'buffer close' })
+end, { desc = 'Close buffer' })
 
 -- Telescope
 local builtin = require 'telescope.builtin'
 map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 map('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
 map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files' })
 
 map('n', '<leader>f', function()
     require('conform').format { lsp_fallback = true }
-end, { desc = 'general format file' })
+end, { desc = 'Format file' })
 
 -- Slightly advanced example of overriding default behavior and theme
 map('n', '<leader>/', function()
