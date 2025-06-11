@@ -22,4 +22,4 @@ while True:
             "--transition-fps", "60",
             "--transition-duration", "5"
         ])
-    time.sleep(900)
+    time.sleep(1800)
