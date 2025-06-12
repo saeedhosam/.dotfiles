@@ -7,8 +7,10 @@ map('n', ';', ':')
 
 -- j/k to move in wrapped lines
 -- Actually jumping between lines became non-sensical, so not doing this is better
--- map('n', 'j', 'gj', { noremap = true, silent = true })
--- map('n', 'k', 'gk', { noremap = true, silent = true })
+-- Actually I keep commenting and assigning them, it's sometimes important when there are long essays
+-- Now it's fixed ;)
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = true, silent = true })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true, silent = true })
 
 -- Windows & buffers
 map('n', '<M-a>', '<C-W>H')
