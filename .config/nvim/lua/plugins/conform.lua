@@ -4,7 +4,7 @@ return {
         formatters_by_ft = {
             lua = { 'stylua' },
             scss = { 'prettier' },
-            markdown = { 'mdformat' },
+            markdown = { 'markdownlint' },
             bash = { 'shfmt' },
             sh = { 'shfmt' },
             typescript = { 'prettier' },
