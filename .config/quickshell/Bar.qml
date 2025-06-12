@@ -1,10 +1,9 @@
 import Quickshell
-import Quickshell.Io
-import QtQuick
 
 Scope {
-    id: root
-    property string time
+    Time {
+        id: timeSource
+    }
 
     Variants {
         model: Quickshell.screens
@@ -12,6 +11,8 @@ Scope {
         PanelWindow {
             property var modelData
             screen: modelData
+            color: "#003049"
+            implicitHeight: 30
 
             anchors {
                 top: true
@@ -19,29 +20,20 @@ Scope {
                 right: true
             }
 
-            implicitHeight: 30
+            margins {
+                top: 5
+                left: 5
+                right: 5
+            }
 
-            Text {
-                anchors.centerIn: parent
-                text: root.time
+            ClockWidget {
+                time: timeSource.time
+                anchors {
+                    right: parent.right
+                    rightMargin: 10
+                    verticalCenter: parent.verticalCenter
+                }
             }
         }
-    }
-
-    Process {
-        id: dateProc
-        command: ["date"]
-        running: true
-
-        stdout: SplitParser {
-            onRead: data => root.time = data
-        }
-    }
-
-    Timer {
-        interval: 1000
-        running: true
-        repeat: true
-        onTriggered: dateProc.running = true
     }
 }
