@@ -16,7 +16,9 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = t
 map('n', '<M-z>', '<C-w>q')
 map('n', '<leader>x', '<cmd>so<CR>', { desc = 'Run file' })
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
+map('n', '<leader>w', '<cmd>close<CR>', { desc = 'Close window' })
 
+map('n', '<leader>l', '<cmd>Lazy<CR>', { desc = 'Open Lazy' })
 map({ 'n', 'i' }, '<A-.>', function()
     require('nvchad.tabufline').next()
 end, { desc = 'buffer goto next' })

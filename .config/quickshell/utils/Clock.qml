@@ -1,10 +1,10 @@
-import Quickshell
 import Quickshell.Io
 import QtQuick
 
-Scope {
-    id: root
-    property string time
+Text {
+    id: clockText
+
+    property string time: ""
 
     Process {
         id: dateProc
@@ -12,7 +12,7 @@ Scope {
         running: true
 
         stdout: SplitParser {
-            onRead: data => root.time = data
+            onRead: data => clockText.time = data
         }
     }
 
@@ -22,4 +22,7 @@ Scope {
         repeat: true
         onTriggered: dateProc.running = true
     }
+
+    text: time
+    color: "white"
 }

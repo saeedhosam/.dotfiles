@@ -22,6 +22,7 @@ return {
         lspconfig.marksman.setup {}
         lspconfig.taplo.setup {}
         lspconfig.ruff.setup {}
+        lspconfig.hyprls.setup {}
         lspconfig.qmlls.setup {
             cmd = { 'qmlls', '-E' },
         }
