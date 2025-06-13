@@ -1,9 +1,9 @@
 import Quickshell
+import QtQuick
+import "../utils"
+import "../widgets/components"
 
 Scope {
-    Time {
-        id: timeSource
-    }
 
     Variants {
         model: Quickshell.screens
@@ -26,11 +26,22 @@ Scope {
                 right: 5
             }
 
-            ClockWidget {
-                time: timeSource.time
+            Row {
+                id: rightRow
+                spacing: 12
                 anchors {
                     right: parent.right
                     rightMargin: 10
+                    verticalCenter: parent.verticalCenter
+                }
+
+                Battery {}
+                Clock {}
+            }
+            Workspaces {
+                anchors {
+                    left: parent.left
+                    leftMargin: 10
                     verticalCenter: parent.verticalCenter
                 }
             }
