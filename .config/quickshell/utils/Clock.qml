@@ -1,28 +1,36 @@
 import Quickshell.Io
 import QtQuick
 
-Text {
-    id: clockText
+Rectangle {
+    width: 170
+    height: 20
+    color: "#1e1e2e"
+    border.color: "#89b4fa"
+    border.width: 1
 
-    property string time: ""
+    Text {
+        id: clockText
+        anchors.centerIn: parent
+        font.family: "JetBrains Mono NF"
+        text: time
+        color: "white"
 
-    Process {
-        id: dateProc
-        command: ["date", "+%a, %b %d · %H:%M:%S"]
-        running: true
+        property string time: ""
 
-        stdout: SplitParser {
-            onRead: data => clockText.time = data
+        Process {
+            id: dateProc
+            command: ["date", "+%a, %b %d · %H:%M:%S"]
+            running: true
+            stdout: SplitParser {
+                onRead: data => clockText.time = data
+            }
+        }
+
+        Timer {
+            interval: 1000
+            running: true
+            repeat: true
+            onTriggered: dateProc.running = true
         }
     }
-
-    Timer {
-        interval: 1000
-        running: true
-        repeat: true
-        onTriggered: dateProc.running = true
-    }
-
-    text: time
-    color: "white"
 }
