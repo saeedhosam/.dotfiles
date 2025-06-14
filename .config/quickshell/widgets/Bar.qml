@@ -37,12 +37,16 @@ Scope {
                 Battery {}
                 Clock {}
             }
-            Workspaces {
+            Row {
+                id: leftRow
+                spacing: 12
                 anchors {
                     left: parent.left
                     leftMargin: 10
                     verticalCenter: parent.verticalCenter
                 }
+                ActiveWorkspace {}
+                ActiveWindow {}
             }
         }
     }
