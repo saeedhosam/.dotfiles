@@ -13,6 +13,8 @@ return {
         },
         highlight = {
             comments_only = false,
+            before = '',
+            after = '',
             pattern = [[\((KEYWORDS)\)]],
         },
     },
