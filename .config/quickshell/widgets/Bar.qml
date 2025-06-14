@@ -1,7 +1,6 @@
 import Quickshell
 import QtQuick
 import "../utils"
-import "../widgets/components"
 
 Scope {
 

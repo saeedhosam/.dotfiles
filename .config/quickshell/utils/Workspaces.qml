@@ -1,17 +1,16 @@
-import Quickshell.Services.UPower
 import QtQuick
+import Quickshell.Hyprland
 
 Rectangle {
-    width: 35
+    width: 25
     height: 20
     color: "#1e1e2e"
     border.color: "#89b4fa"
     border.width: 1
-
     Text {
         color: "white"
         font.family: "JetBrains Mono NF"
         anchors.centerIn: parent
-        text: qsTr("%1%").arg(Math.round(UPower.displayDevice.percentage * 100))
+        text: Hyprland.focusedMonitor.activeWorkspace.id
     }
 }
