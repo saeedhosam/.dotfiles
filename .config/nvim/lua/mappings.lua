@@ -4,7 +4,7 @@ local map = vim.keymap.set
 map('n', '<C-[>', '<cmd>noh<CR>')
 map('n', ';', ':')
 -- map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
-
+--
 -- j/k to move in wrapped lines
 -- Actually jumping between lines became non-sensical, so not doing this is better
 -- Actually I keep commenting and assigning them, it's sometimes important when there are long essays
