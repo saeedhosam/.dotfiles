@@ -26,10 +26,23 @@ function fetchNextPrayer(callback) {
             time: time,
             timestamp: Math.floor(prayerTime.getTime() / 1000),
           });
-
           return;
         }
       }
+
+      // All prayers have passed, fallback to next day's Fajr
+      var fajrTime = timings["Fajr"];
+      var [fajrHour, fajrMinute] = fajrTime.split(":").map(Number);
+      var tomorrow = new Date(now);
+      tomorrow.setDate(now.getDate() + 1);
+      tomorrow.setHours(fajrHour, fajrMinute, 0, 0);
+
+      callback({
+        lhs: "Fajr (" + fajrTime + "):",
+        name: "Fajr",
+        time: fajrTime,
+        timestamp: Math.floor(tomorrow.getTime() / 1000),
+      });
     }
   };
   xhr.send();

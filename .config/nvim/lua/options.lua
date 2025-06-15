@@ -13,7 +13,7 @@ o.clipboard = 'unnamedplus'
 o.cursorline = true
 o.cursorlineopt = 'both'
 
-o.scrolloff = 10
+o.scrolloff = 5
 
 o.conceallevel = 2
 
