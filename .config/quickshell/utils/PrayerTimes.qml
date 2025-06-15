@@ -12,6 +12,7 @@ Rectangle {
     border.color: "#89b4fa"
     border.width: 1
     property int nextPrayerTimestamp: 0
+    property int diffInTimestamp: (root.nextPrayerTimestamp - Time.time)
 
     RowLayout {
         anchors.fill: parent
@@ -27,12 +28,19 @@ Rectangle {
 
         Text {
             id: countdown
-            text: Epoch.formatTimeOnly(root.nextPrayerTimestamp - Time.time)
+            text: Epoch.formatTimeOnly(root.diffInTimestamp)
             font.family: "JetBrains Mono NF"
             color: "white"
             Layout.rightMargin: 5
             Layout.alignment: Qt.AlignCenter
         }
+    }
+
+    Component.onCompleted: {
+        Prayer.fetchNextPrayer(function (result) {
+            nextPrayer.text = result.lhs;
+            nextPrayerTimestamp = result.timestamp;
+        });
     }
 
     HoverHandler {
@@ -89,12 +97,5 @@ Rectangle {
                 }
             }
         }
-    }
-
-    Component.onCompleted: {
-        Prayer.fetchNextPrayer(function (result) {
-            nextPrayer.text = result.lhs;
-            nextPrayerTimestamp = result.timestamp;
-        });
     }
 }
