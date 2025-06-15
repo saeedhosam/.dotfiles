@@ -3,7 +3,6 @@ import QtQuick
 import "../utils"
 
 Scope {
-
     Variants {
         model: Quickshell.screens
 
@@ -33,8 +32,8 @@ Scope {
                     rightMargin: 10
                     verticalCenter: parent.verticalCenter
                 }
-
                 Battery {}
+                PrayerTimes {}
                 Clock {}
             }
             Row {

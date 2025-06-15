@@ -1,5 +1,5 @@
-import Quickshell.Io
 import QtQuick
+import "../scripts/epoch.js" as Epoch
 
 Rectangle {
     width: 170
@@ -12,25 +12,7 @@ Rectangle {
         id: clockText
         anchors.centerIn: parent
         font.family: "JetBrains Mono NF"
-        text: time
+        text: Epoch.formatDuration(Time.time)
         color: "white"
-
-        property string time: ""
-
-        Process {
-            id: dateProc
-            command: ["date", "+%a, %b %d · %H:%M:%S"]
-            running: true
-            stdout: SplitParser {
-                onRead: data => clockText.time = data
-            }
-        }
-
-        Timer {
-            interval: 1000
-            running: true
-            repeat: true
-            onTriggered: dateProc.running = true
-        }
     }
 }
