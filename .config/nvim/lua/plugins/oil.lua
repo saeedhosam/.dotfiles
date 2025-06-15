@@ -18,10 +18,10 @@ return {
                     if entry then
                         local dir = vim.fn.expand '%:p'
                         local path = dir .. entry.name
-                        path = path:gsub('^oil://', '') -- Remove oil:// prefix
-                        vim.notify('Selected path: ' .. path)
+                        path = path:gsub('^oil://', '')
                         if entry.name:match '%.pdf$' then
                             vim.fn.jobstart({ 'zathura', path }, { detach = true })
+                            actions.close.callback()
                         else
                             actions.select.callback()
                         end
