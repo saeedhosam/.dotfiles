@@ -28,11 +28,21 @@ Rectangle {
 
         Text {
             id: countdown
+            signal counterChanged
             text: Epoch.formatTimeOnly(root.diffInTimestamp)
             font.family: "JetBrains Mono NF"
             color: "white"
             Layout.rightMargin: 5
             Layout.alignment: Qt.AlignCenter
+
+            onTextChanged: {
+                if (root.diffInTimestamp === 0) {
+                    Prayer.fetchNextPrayer(function (result) {
+                        nextPrayer.text = result.lhs;
+                        nextPrayerTimestamp = result.timestamp;
+                    });
+                }
+            }
         }
     }
 

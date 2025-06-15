@@ -3,7 +3,6 @@ local map = vim.keymap.set
 -- Essentials
 map('n', '<C-[>', '<cmd>noh<CR>')
 map('n', ';', ':')
--- map('n', '\\', '<cmd>NvimTreeToggle<CR><cmd>NvimTreeRefresh<CR>', { desc = 'toggle nvim tree' })
 --
 -- j/k to move in wrapped lines
 -- Actually jumping between lines became non-sensical, so not doing this is better
@@ -13,6 +12,10 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = t
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true, silent = true })
 
 -- Windows & buffers
+map('n', '<M-a>', '<C-W>H')
+map('n', '<M-s>', '<C-W>J')
+map('n', '<M-w>', '<C-W>K')
+map('n', '<M-d>', '<C-W>L')
 map('n', '<M-z>', '<C-w>q')
 map('n', '<leader>x', '<cmd>so<CR>', { desc = 'Run file' })
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
