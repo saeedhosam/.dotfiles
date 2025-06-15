@@ -38,6 +38,7 @@ Rectangle {
 
     readonly property var titleMap: ({
             "Google-chrome": "Google Chrome",
+            "google-chrome": "Google Chrome",
             "com.mitchellh.ghostty": "Ghostty",
             "undefined": "Desktop"
         })
