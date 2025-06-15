@@ -46,7 +46,8 @@ Rectangle {
 
             // Other
             "undefined": "Desktop",
-            "discord": "Discord"
+            "discord": "Discord",
+            "quickshell": "Quickshell"
         })
 
     function prettyTitle(className: string): string {
