@@ -6,7 +6,7 @@ import QtQuick.Layouts
 
 Rectangle {
     id: root
-    width: 180
+    width: 200
     height: 20
     color: "#1e1e2e"
     border.color: "#89b4fa"
