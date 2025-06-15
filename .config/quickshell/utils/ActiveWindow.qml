@@ -37,10 +37,16 @@ Rectangle {
     }
 
     readonly property var titleMap: ({
+            // Browsers
             "Google-chrome": "Google Chrome",
             "google-chrome": "Google Chrome",
+
+            // Terminals
             "com.mitchellh.ghostty": "Ghostty",
-            "undefined": "Desktop"
+
+            // Other
+            "undefined": "Desktop",
+            "discord": "Discord"
         })
 
     function prettyTitle(className: string): string {
