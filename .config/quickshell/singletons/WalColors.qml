@@ -26,147 +26,50 @@ Singleton {
     property string color15
 
     Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $background"]
-        running: true
-
+        id: changeWal
+        command: ["sh", "-c", 'swww img "$(find /home/saeed/wallpapers/content -type f | shuf -n 1)"']
         stdout: StdioCollector {
-            onStreamFinished: root.background = this.text.trim()
+            onStreamFinished: console.log("Wallpaper changed via SWWW")
         }
     }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $foreground"]
-        running: true
 
-        stdout: StdioCollector {
-            onStreamFinished: root.foreground = this.text.trim()
+    Process {
+        id: setScheme
+        command: ["sh", "-c", "hellwal --skip-term-colors -i $(swww query | grep -oP '(?<=image: ).*') -j"]
+        stdout: SplitParser {
+            splitMarker: ""
+            onRead: data => {
+                root.background = JSON.parse(data).special.background;
+                root.foreground = JSON.parse(data).special.foreground;
+                root.cursor = JSON.parse(data).special.cursor;
+                root.color1 = JSON.parse(data).colors.color1;
+                root.color2 = JSON.parse(data).colors.color2;
+                root.color3 = JSON.parse(data).colors.color3;
+                root.color4 = JSON.parse(data).colors.color4;
+                root.color5 = JSON.parse(data).colors.color5;
+                root.color6 = JSON.parse(data).colors.color6;
+                root.color7 = JSON.parse(data).colors.color7;
+                root.color8 = JSON.parse(data).colors.color8;
+                root.color9 = JSON.parse(data).colors.color9;
+                root.color10 = JSON.parse(data).colors.color10;
+                root.color11 = JSON.parse(data).colors.color11;
+                root.color12 = JSON.parse(data).colors.color12;
+                root.color13 = JSON.parse(data).colors.color13;
+                root.color14 = JSON.parse(data).colors.color14;
+                root.color15 = JSON.parse(data).colors.color15;
+                console.log("Colorscheme set via Hellwal");
+            }
         }
     }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $cursor"]
-        running: true
 
-        stdout: StdioCollector {
-            onStreamFinished: root.cursor = this.text.trim()
-        }
+    function changeWallpaper() {
+        changeWal.running = true;
     }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color1"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color1 = this.text.trim()
-        }
+    function generateScheme() {
+        setScheme.running = true;
     }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color2"]
-        running: true
 
-        stdout: StdioCollector {
-          onStreamFinished: root.color2 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color3"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color3 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color4"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color4 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color5"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color5 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color6"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color6 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color7"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color7 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color8"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color8 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color9"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color9 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color10"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color10 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color11"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color11 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color12"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color12 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color13"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color13 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color14"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color14 = this.text.trim()
-        }
-    }
-    Process {
-        command: ["sh", "-c", "source ~/.cache/wal/colors.sh && echo $color15"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.color15 = this.text.trim()
-        }
+    Component.onCompleted: {
+        setScheme.running = true;
     }
 }

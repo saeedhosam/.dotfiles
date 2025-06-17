@@ -1,5 +1,4 @@
 import Quickshell
-import Quickshell.Io
 import QtQuick
 import "../singletons"
 import "../utils"
@@ -12,7 +11,7 @@ Scope {
             id: root
             property var modelData
 
-            color: WalColors.background
+            color: Qt.lighter(WalColors.background, 1.5)
             screen: modelData
             implicitHeight: 30
 

@@ -7,7 +7,7 @@ Rectangle {
     id: root
     width: 200
     height: 20
-    color: Qt.lighter(WalColors.background, 2.0)
+    color: Qt.lighter(WalColors.background, 3.0)
     border.color: WalColors.color2
     border.width: 1
 
