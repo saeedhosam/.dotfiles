@@ -1,5 +1,4 @@
 import QtQuick
-import Quickshell
 import "../singletons"
 import "../scripts/prayer.js" as Prayer
 import "../scripts/epoch.js" as Epoch
@@ -12,6 +11,7 @@ Rectangle {
     color: Qt.lighter(WalColors.background, 3.0)
     border.color: WalColors.color2
     border.width: 1
+
     property int nextPrayerTimestamp: 0
     property int diffInTimestamp: (root.nextPrayerTimestamp - Time.time)
 
@@ -52,61 +52,5 @@ Rectangle {
             nextPrayer.text = result.lhs;
             nextPrayerTimestamp = result.timestamp;
         });
-    }
-
-    HoverHandler {
-        id: mouse
-    }
-
-    LazyLoader {
-        id: helloPopupLoader
-        active: mouse.hovered
-        // active: true
-
-        PanelWindow {
-            id: helloPopup
-
-            anchors.top: root.bottom
-
-            width: 200
-            height: 200
-            color: "#333333"
-
-            Rectangle {
-                anchors.fill: parent
-                color: "#202020"
-                border.color: "#89b4fa"
-                border.width: 1
-
-                ColumnLayout {
-                    Layout.margins: 5
-                    Text {
-                        text: "Fajr"
-                        color: "white"
-                        font.pixelSize: 14
-                    }
-                    Text {
-                        text: "Dhuhr"
-                        color: "white"
-                        font.pixelSize: 14
-                    }
-                    Text {
-                        text: "Asr"
-                        color: "white"
-                        font.pixelSize: 14
-                    }
-                    Text {
-                        text: "Maghrib"
-                        color: "white"
-                        font.pixelSize: 14
-                    }
-                    Text {
-                        text: "Isha'"
-                        color: "white"
-                        font.pixelSize: 14
-                    }
-                }
-            }
-        }
     }
 }
