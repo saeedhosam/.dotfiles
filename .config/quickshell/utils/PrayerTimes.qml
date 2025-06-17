@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import "../singletons"
 import "../scripts/prayer.js" as Prayer
 import "../scripts/epoch.js" as Epoch
 import QtQuick.Layouts
@@ -8,8 +9,8 @@ Rectangle {
     id: root
     width: 200
     height: 20
-    color: "#1e1e2e"
-    border.color: "#89b4fa"
+    color: Qt.lighter(WalColors.background, 2.0)
+    border.color: WalColors.color2
     border.width: 1
     property int nextPrayerTimestamp: 0
     property int diffInTimestamp: (root.nextPrayerTimestamp - Time.time)
@@ -21,7 +22,7 @@ Rectangle {
             id: nextPrayer
             text: "Loading..."
             font.family: "JetBrains Mono NF"
-            color: "white"
+            color: Qt.lighter(WalColors.foreground, 1.25)
             Layout.leftMargin: 5
             Layout.alignment: Qt.AlignCenter
         }
@@ -31,7 +32,7 @@ Rectangle {
             signal counterChanged
             text: Epoch.formatTimeOnly(root.diffInTimestamp)
             font.family: "JetBrains Mono NF"
-            color: "white"
+            color: Qt.lighter(WalColors.foreground, 1.25)
             Layout.rightMargin: 5
             Layout.alignment: Qt.AlignCenter
 

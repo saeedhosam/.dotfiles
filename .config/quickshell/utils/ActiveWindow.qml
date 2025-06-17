@@ -1,13 +1,14 @@
 import QtQuick
 import Quickshell.Io
 import Quickshell.Hyprland
+import "../singletons"
 
 Rectangle {
     id: root
     width: 200
     height: 20
-    color: "#1e1e2e"
-    border.color: "#89b4fa"
+    color: Qt.lighter(WalColors.background, 2.0)
+    border.color: WalColors.color2
     border.width: 1
 
     property string activeWindow
@@ -30,7 +31,7 @@ Rectangle {
     }
 
     Text {
-        color: "white"
+        color: Qt.lighter(WalColors.foreground, 1.25)
         font.family: "JetBrains Mono NF"
         anchors.centerIn: parent
         text: root.activeWindow

@@ -1,5 +1,7 @@
 import Quickshell
+import Quickshell.Io
 import QtQuick
+import "../singletons"
 import "../utils"
 
 Scope {
@@ -7,9 +9,11 @@ Scope {
         model: Quickshell.screens
 
         PanelWindow {
+            id: root
             property var modelData
+
+            color: WalColors.background
             screen: modelData
-            color: "#003049"
             implicitHeight: 30
 
             anchors {
@@ -32,6 +36,7 @@ Scope {
                     rightMargin: 10
                     verticalCenter: parent.verticalCenter
                 }
+                Wallpaper {}
                 Battery {}
                 PrayerTimes {}
                 Clock {}
