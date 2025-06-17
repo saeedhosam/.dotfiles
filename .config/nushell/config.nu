@@ -25,4 +25,7 @@ let config = {
   # edit_mode: vi
 }
 
+let img = (swww query | str replace -r '.*image:\s*' '' | str trim)
+let colors = (open ~/.cache/wal/colors.json)
+
 $env.config = ($env.config | merge $config)
