@@ -24,8 +24,10 @@ o.tabstop = 2
 o.softtabstop = 2
 
 opt.fillchars = { eob = ' ' }
+
 o.ignorecase = true
-o.smartcase = true
+o.smartcase = true -- my reaction was "so smart", Bram in user manual said "That's smar!" lol, it really is
+
 o.mouse = 'a'
 
 o.number = true
