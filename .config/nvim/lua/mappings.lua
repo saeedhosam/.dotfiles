@@ -20,20 +20,26 @@ map('n', '<M-z>', '<C-w>q')
 map('n', '<leader>x', '<cmd>so<CR>', { desc = 'Run file' })
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 map('n', '<leader>w', '<cmd>close<CR>', { desc = 'Close window' })
+map('n', '<leader>o', '<cmd>only<CR>', { desc = 'Close all windows except current' })
 
 map('n', '<leader>l', '<cmd>Lazy<CR>', { desc = 'Open Lazy' })
+
 map({ 'n', 'i' }, '<A-.>', function()
     require('nvchad.tabufline').next()
 end, { desc = 'buffer goto next' })
+
 map({ 'n', 'i' }, '<A-,>', function()
     require('nvchad.tabufline').prev()
 end, { desc = 'buffer goto prev' })
+
 map({ 'n', 'i' }, '<A-i>', function()
     require('nvchad.tabufline').move_buf(-1)
 end, { desc = 'buffer goto next' })
+
 map({ 'n', 'i' }, '<A-o>', function()
     require('nvchad.tabufline').move_buf(1)
 end, { desc = 'buffer goto next' })
+
 map('n', '<leader>q', function() -- close buffer
     require('nvchad.tabufline').close_buffer()
 end, { desc = 'Close buffer' })
