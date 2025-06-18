@@ -44,6 +44,8 @@ map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 map('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
 map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files' })
+map('n', '<leader>sj', builtin.jumplist, { desc = '[S]earch Recent Jumplists' })
+map('n', '<leader>sb', builtin.buffers, { desc = '[S]earch Recent Jumplists' })
 
 map('n', '<leader>f', function()
     require('conform').format { lsp_fallback = true }
