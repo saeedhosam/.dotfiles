@@ -37,7 +37,7 @@ Rectangle {
             Layout.alignment: Qt.AlignCenter
 
             onTextChanged: {
-                if (root.diffInTimestamp === 0) {
+                if (root.diffInTimestamp < 0) {
                     Prayer.fetchNextPrayer(function (result) {
                         nextPrayer.text = result.lhs;
                         nextPrayerTimestamp = result.timestamp;
