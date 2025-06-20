@@ -1,5 +1,4 @@
 import QtQuick
-import Quickshell
 import "../singletons"
 import "../scripts/prayer.js" as Prayer
 import "../scripts/epoch.js" as Epoch
@@ -53,31 +52,5 @@ Rectangle {
             nextPrayer.text = result.lhs;
             nextPrayerTimestamp = result.timestamp;
         });
-    }
-
-    property bool showPrayers: false
-
-    MouseArea {
-        anchors.fill: parent
-        hoverEnabled: true
-        onEntered: root.showPrayers = true
-        onExited: root.showPrayers = false
-    }
-
-    LazyLoader {
-        active: root.showPrayers
-
-        PanelWindow {
-            implicitWidth: 230
-            implicitHeight: 130
-            color: "transparent"
-
-            Rectangle {
-                anchors.fill: parent
-                color: Qt.lighter(WalColors.background, 3.0)
-                border.color: WalColors.color2
-                border.width: 1
-            }
-        }
     }
 }

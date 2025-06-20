@@ -21,7 +21,7 @@ function fetchNextPrayer(callback) {
 
         if (prayerTime > now) {
           callback({
-            lhs: prayer + " (" + time + "):",
+            lhs: prayer + " (" + time + ") -",
             name: prayer,
             time: time,
             timestamp: Math.floor(prayerTime.getTime() / 1000),
@@ -38,7 +38,7 @@ function fetchNextPrayer(callback) {
       tomorrow.setHours(fajrHour, fajrMinute, 0, 0);
 
       callback({
-        lhs: "Fajr (" + fajrTime + "):",
+        lhs: "Fajr (" + fajrTime + ") -",
         name: "Fajr",
         time: fajrTime,
         timestamp: Math.floor(tomorrow.getTime() / 1000),

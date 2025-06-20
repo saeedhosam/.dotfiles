@@ -45,10 +45,13 @@ Rectangle {
             // Terminals
             "com.mitchellh.ghostty": "Ghostty",
 
+            // Communication
+            "discord": "Discord",
+
             // Other
             "undefined": "Desktop",
-            "discord": "Discord",
-            "quickshell": "Quickshell"
+            "quickshell": "Quickshell",
+            "org.pwmt.zathura": "Zathura"
         })
 
     function prettyTitle(className: string): string {
