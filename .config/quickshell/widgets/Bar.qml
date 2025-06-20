@@ -50,6 +50,7 @@ Scope {
                 }
                 ActiveWorkspace {}
                 ActiveWindow {}
+                Volume {}
             }
         }
     }
