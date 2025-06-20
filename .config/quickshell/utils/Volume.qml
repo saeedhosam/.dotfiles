@@ -63,7 +63,7 @@ Scope {
 
                     IconImage {
                         implicitSize: 30
-                        source: "volume.png"
+                        source: Quickshell.iconPath("audio-volume-high-symbolic")
                     }
 
                     Rectangle {
