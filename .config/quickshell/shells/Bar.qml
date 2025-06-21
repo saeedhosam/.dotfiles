@@ -1,7 +1,7 @@
 import Quickshell
 import QtQuick
 import "../singletons"
-import "../utils"
+import "../widgets"
 
 Scope {
     Variants {
@@ -11,7 +11,7 @@ Scope {
             id: root
             property var modelData
 
-            color: Qt.lighter(WalColors.background, 1.5)
+            color: Matugen.surface
             screen: modelData
             implicitHeight: 30
 
@@ -50,7 +50,6 @@ Scope {
                 }
                 ActiveWorkspace {}
                 ActiveWindow {}
-                Volume {}
             }
         }
     }

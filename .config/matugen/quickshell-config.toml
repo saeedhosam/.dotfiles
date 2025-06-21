@@ -1,0 +1,8 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
+set = true
+
+[templates.quickshell]
+input_path = './templates/quickshell-colors.json'
+output_path = '~/.config/quickshell/scripts/colors.json'

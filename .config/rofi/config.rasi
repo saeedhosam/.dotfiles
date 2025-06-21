@@ -1,5 +1,0 @@
-@import "colors.rasi"
-
-* {
-     background-color: @primary-container;
-}
