@@ -1,15 +1,11 @@
 import QtQuick
 import Quickshell.Io
 import Quickshell.Hyprland
-import "../singletons"
 
-Rectangle {
+StyledRect {
     id: root
-    width: 200
+    width: 130
     height: 20
-    color: Qt.lighter(WalColors.background, 3.0)
-    border.color: WalColors.color2
-    border.width: 1
 
     property string activeWindow
 
@@ -30,9 +26,7 @@ Rectangle {
         }
     }
 
-    Text {
-        color: Qt.lighter(WalColors.foreground, 1.25)
-        font.family: "JetBrains Mono NF"
+    StyledText {
         anchors.centerIn: parent
         text: root.activeWindow
     }

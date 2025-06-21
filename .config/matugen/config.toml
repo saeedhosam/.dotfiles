@@ -4,5 +4,10 @@ arguments = ["img", "--transition-type", "center"]
 set = true
 
 [templates.rofi]
-input_path = 'templates/colors.rasi'
+input_path = './templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
+
+[templates.hyprland]
+input_path = './templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'

@@ -7,6 +7,8 @@ map('n', ';', ':')
 map('n', ':', '')
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
+map('n', '{', '}') -- idk why these were different than jk, at least I don't know 'yet'
+map('n', '}', '{')
 
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = true, silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true, silent = true })

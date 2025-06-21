@@ -1,43 +1,42 @@
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Io
 import "../singletons"
 
-Rectangle {
+StyledRect {
     id: root
     width: 45
     height: 20
-    color: Qt.lighter(WalColors.background, 4.0)
-    border.color: WalColors.color5
-    border.width: 1
+
+    Process {
+        id: changeWal
+        command: ["sh", "-c", 'swww img "$(find /home/saeed/wallpapers/content -type f | shuf -n 1)" --transition-type center']
+    }
 
     RowLayout {
         anchors.fill: parent
-        Text {
+        StyledText {
             text: ""
-            color: Qt.lighter(WalColors.foreground, 1.25)
-            font.family: "JetBrains Mono NF"
             Layout.alignment: Qt.AlignLeft
             Layout.leftMargin: 5
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    WalColors.changeWallpaper();
+                    changeWal.running = true;
                 }
             }
         }
 
-        Text {
+        StyledText {
             text: ""
-            color: Qt.lighter(WalColors.foreground, 1.25)
-            font.family: "JetBrains Mono NF"
             Layout.alignment: Qt.AlignRight
             Layout.rightMargin: 5
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    WalColors.generateScheme();
+                    Matugen.generateScheme();
                 }
             }
         }
