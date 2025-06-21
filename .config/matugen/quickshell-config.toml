@@ -3,6 +3,10 @@ command = "swww"
 arguments = ["img", "--transition-type", "center"]
 set = true
 
-[templates.quickshell]
+[templates.quickshellJSON]
 input_path = './templates/quickshell-colors.json'
 output_path = '~/.config/quickshell/scripts/colors.json'
+
+[templates.quickshellJS]
+input_path = './templates/quickshell-colors.js'
+output_path = '~/.config/quickshell/scripts/colors.js'
