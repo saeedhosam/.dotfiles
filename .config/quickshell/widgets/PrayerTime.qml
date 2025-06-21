@@ -1,4 +1,7 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import Quickshell
 import "../singletons"
 import "../scripts/prayer.js" as Prayer
 import "../scripts/epoch.js" as Epoch
@@ -45,5 +48,32 @@ StyledRect {
             nextPrayer.text = result.lhs;
             nextPrayerTimestamp = result.timestamp;
         });
+    }
+
+    MouseArea {
+        id: mouse
+        anchors.fill: parent
+        hoverEnabled: true
+        // onClicked: popupLoader.active = !popupLoader.active
+        onEntered: popupLoader.active = true
+        onExited: popupLoader.active = false
+    }
+
+    LazyLoader {
+        id: popupLoader
+        PopupWindow {
+            id: popupWindow
+            anchor.window: root.QsWindow.window
+            width: 200
+            height: 200
+            visible: true
+            color: "transparent"
+            anchor.rect.x: 1517
+            anchor.rect.y: 40
+
+            StyledRect {
+                anchors.fill: parent
+            }
+        }
     }
 }
