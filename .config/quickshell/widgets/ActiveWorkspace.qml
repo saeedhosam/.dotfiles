@@ -2,7 +2,7 @@ import QtQuick
 import Quickshell.Hyprland
 
 StyledRect {
-    width: 25
+    width: 30
     height: 20
 
     StyledText {

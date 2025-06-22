@@ -36,7 +36,7 @@ Scope {
 
                 Row {
                     id: rightRow
-                    spacing: 12
+                    spacing: 10
                     anchors {
                         right: parent.right
                         rightMargin: 10
@@ -50,18 +50,19 @@ Scope {
                 }
 
                 StyledRect {
-                    width: 230
+                    width: 200
                     height: 20
                     anchors.centerIn: parent
                     StyledText {
                         anchors.centerIn: parent
                         text: "Disobey your desire"
+                        font.bold: true
                     }
                 }
 
                 Row {
                     id: leftRow
-                    spacing: 12
+                    spacing: 10
                     anchors {
                         left: parent.left
                         leftMargin: 10
