@@ -61,11 +61,12 @@ StyledRect {
 
     LazyLoader {
         id: popupLoader
+
         PopupWindow {
             id: popupWindow
             anchor.window: root.QsWindow.window
-            width: 200
-            height: 200
+            implicitWidth: 200
+            implicitHeight: 200
             visible: true
             color: "transparent"
             anchor.rect.x: 1517
@@ -73,6 +74,88 @@ StyledRect {
 
             StyledRect {
                 anchors.fill: parent
+
+                ColumnLayout {
+                    anchors.fill: parent
+                    RowLayout {
+                        StyledText {
+                            text: "Marghrib"
+                            Layout.leftMargin: 10
+                            Layout.fillWidth: true
+                        }
+
+                        StyledText {
+                            signal counterChanged
+                            text: "00:00:00"
+                            Layout.rightMargin: 10
+                        }
+                    }
+                    RowLayout {
+                        StyledText {
+                            text: "Isha'"
+                            Layout.leftMargin: 10
+                            Layout.fillWidth: true
+                        }
+
+                        StyledText {
+                            signal counterChanged
+                            text: "00:00:00"
+                            Layout.rightMargin: 10
+                        }
+                    }
+                    RowLayout {
+                        StyledText {
+                            text: "Fajr"
+                            Layout.leftMargin: 10
+                            Layout.fillWidth: true
+                        }
+
+                        StyledText {
+                            signal counterChanged
+                            text: "00:00:00"
+                            Layout.rightMargin: 10
+                        }
+                    }
+                    RowLayout {
+                        StyledText {
+                            text: "Shuruq"
+                            Layout.leftMargin: 10
+                            Layout.fillWidth: true
+                        }
+
+                        StyledText {
+                            signal counterChanged
+                            text: "00:00:00"
+                            Layout.rightMargin: 10
+                        }
+                    }
+                    RowLayout {
+                        StyledText {
+                            text: "Dhuhr"
+                            Layout.leftMargin: 10
+                            Layout.fillWidth: true
+                        }
+
+                        StyledText {
+                            signal counterChanged
+                            text: "00:00:00"
+                            Layout.rightMargin: 10
+                        }
+                    }
+                    RowLayout {
+                        StyledText {
+                            text: "Asr"
+                            Layout.leftMargin: 10
+                            Layout.fillWidth: true
+                        }
+
+                        StyledText {
+                            signal counterChanged
+                            text: "00:00:00"
+                            Layout.rightMargin: 10
+                        }
+                    }
+                }
             }
         }
     }
