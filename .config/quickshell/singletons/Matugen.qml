@@ -117,7 +117,7 @@ Singleton {
 
     Process {
         id: setScheme
-        command: ['sh', '-c', "matugen image $(swww query | grep -oP '(?<=image: ).*') -c ~/.config/matugen/quickshell-config.toml && cat ~/.dotfiles/.config/quickshell/scripts/colors.json"]
+        command: ['sh', '-c', `swww img "$(find /home/saeed/wallpapers/content -type f | shuf -n 1)" --transition-type fade --transition-fps 60 --transition-duration 1 && matugen image $(swww query | grep -oP '(?<=image: ).*') -c ~/.config/matugen/quickshell-config.toml && cat ~/.dotfiles/.config/quickshell/scripts/colors.json`]
         stdout: SplitParser {
             splitMarker: ""
             onRead: data => {
@@ -175,11 +175,6 @@ Singleton {
     }
 
     Process {
-        id: walChange
-        command: ["sh", "-c", 'swww img "$(find /home/saeed/wallpapers/content -type f | shuf -n 1)" --transition-type fade --transition-fps 60 --transition-duration 1']
-    }
-
-    Process {
         id: walDelete
         command: ['sh', '-c', `if rm "$(swww query | grep -oP '(?<=image: ).*')"; then   notify-send "Wallpaper deleted."; else   notify-send "Failed to delete wallpaper: $(swww query | grep -oP '(?<=image: ).*')"; fi`]
     }
@@ -194,10 +189,6 @@ Singleton {
 
     function delWallpaper() {
         walDelete.running = true;
-    }
-
-    function changeWal() {
-        walChange.running = true;
     }
 
     Component.onCompleted: {
