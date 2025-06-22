@@ -9,12 +9,11 @@ Scope {
 
         PanelWindow {
             id: root
-            property var modelData
-
             screen: modelData
             implicitHeight: 30
-
             color: "transparent"
+
+            property var modelData
 
             anchors {
                 top: true
@@ -43,11 +42,23 @@ Scope {
                         rightMargin: 10
                         verticalCenter: parent.verticalCenter
                     }
+
                     Wallpaper {}
                     Battery {}
                     PrayerTime {}
                     Clock {}
                 }
+
+                StyledRect {
+                    width: 230
+                    height: 20
+                    anchors.centerIn: parent
+                    StyledText {
+                        anchors.centerIn: parent
+                        text: "Disobey your desire"
+                    }
+                }
+
                 Row {
                     id: leftRow
                     spacing: 12
@@ -56,6 +67,7 @@ Scope {
                         leftMargin: 10
                         verticalCenter: parent.verticalCenter
                     }
+
                     ActiveWorkspace {}
                     ActiveWindow {}
                 }
