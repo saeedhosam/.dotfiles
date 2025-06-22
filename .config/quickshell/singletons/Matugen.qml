@@ -176,7 +176,7 @@ Singleton {
 
     Process {
         id: walDelete
-        command: ['sh', '-c', "rm $(swww query | grep -oP '(?<=image: ).*') && notify-send 'Image Deleted.'"]
+        command: ['sh', '-c', `if rm "$(swww query | grep -oP '(?<=image: ).*')"; then   notify-send "Wallpaper deleted."; else   notify-send "Failed to delete wallpaper: $(swww query | grep -oP '(?<=image: ).*')"; fi`]
     }
 
     function withAlpha(color: color, alpha: real): color {
