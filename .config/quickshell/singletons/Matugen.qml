@@ -174,12 +174,21 @@ Singleton {
         }
     }
 
+    Process {
+        id: walDelete
+        command: ['sh', '-c', "rm $(swww query | grep -oP '(?<=image: ).*') && notify-send 'Image Deleted.'"]
+    }
+
     function withAlpha(color: color, alpha: real): color {
         return Qt.rgba(color.r, color.g, color.b, alpha);
     }
 
     function generateScheme() {
         setScheme.running = true;
+    }
+
+    function delWallpaper() {
+        walDelete.running = true;
     }
 
     Component.onCompleted: {

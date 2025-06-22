@@ -1,11 +1,12 @@
 import QtQuick
+import Quickshell.Services.Notifications
 import QtQuick.Layouts
 import Quickshell.Io
 import "../singletons"
 
 StyledRect {
     id: root
-    width: 45
+    width: 75
     height: 20
 
     Process {
@@ -40,5 +41,20 @@ StyledRect {
                 }
             }
         }
+        StyledText {
+            text: ""
+            Layout.alignment: Qt.AlignRight
+            Layout.rightMargin: 5
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: {
+                    Matugen.delWallpaper();
+                }
+            }
+        }
+    }
+    NotificationServer {
+        id: notify
     }
 }
