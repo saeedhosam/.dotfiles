@@ -1,15 +1,15 @@
 import QtQuick
-import Quickshell.Services.Notifications
 import QtQuick.Layouts
 import "../singletons"
 
 StyledRect {
     id: root
-    width: 75
+    width: 45
     height: 20
 
     RowLayout {
         anchors.fill: parent
+
         StyledText {
             text: ""
             Layout.alignment: Qt.AlignLeft
@@ -18,23 +18,11 @@ StyledRect {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    Matugen.changeWal();
-                }
-            }
-        }
-
-        StyledText {
-            text: ""
-            Layout.alignment: Qt.AlignRight
-            Layout.rightMargin: 5
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: {
                     Matugen.generateScheme();
                 }
             }
         }
+
         StyledText {
             text: ""
             Layout.alignment: Qt.AlignRight
@@ -47,8 +35,5 @@ StyledRect {
                 }
             }
         }
-    }
-    NotificationServer {
-        id: notify
     }
 }
