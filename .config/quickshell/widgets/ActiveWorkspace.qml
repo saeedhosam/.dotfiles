@@ -1,4 +1,5 @@
 import QtQuick
+import Quickshell.Widgets
 import Quickshell.Hyprland
 import "../singletons"
 
@@ -9,6 +10,7 @@ Row {
     property int activeWorkspace: Hyprland.focusedMonitor.activeWorkspace.id
 
     Repeater {
+        id: repeater
         model: 10
 
         StyledRect {

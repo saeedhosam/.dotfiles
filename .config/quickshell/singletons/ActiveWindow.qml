@@ -17,12 +17,14 @@ Singleton {
             "Google-chrome": "",
             "google-chrome": "",
             "firefox": "󰈹",
-
             // Terminals
             "com.mitchellh.ghostty": "",
-
+            // Communication
+            "discord": "",
             // Other
-            "undefined": "-"
+            "undefined": "-",
+            "org.pwmt.zathura": "",
+            "anki": "󱟱"
         })
 
     readonly property var titleMap: ({
@@ -30,17 +32,16 @@ Singleton {
             "Google-chrome": "Google Chrome",
             "google-chrome": "Google Chrome",
             "firefox": "Firefox",
-
+            "Brave-browser": "Brave",
             // Terminals
             "com.mitchellh.ghostty": "Ghostty",
-
             // Communication
             "discord": "Discord",
-
             // Other
             "undefined": "Desktop",
             "quickshell": "Quickshell",
-            "org.pwmt.zathura": "Zathura"
+            "org.pwmt.zathura": "Zathura",
+            "anki": "Anki"
         })
 
     function prettyTitle(className: string): string {
@@ -75,11 +76,18 @@ Singleton {
         stdout: SplitParser {
             splitMarker: ""
             onRead: data => {
-                const windowTitle = JSON.parse(data).class;
-                root.activeWindow = windowTitle
-                root.prettyActiveWindow = root.prettyTitle(windowTitle);
-                root.activeWindowIcon = root.titleToIcon(windowTitle);
-                console.log("activeWindow: " + root.activeWindow)
+                try {
+                    const windowData = JSON.parse(data);
+                    const windowTitle = windowData.class || "undefined";
+                    root.activeWindow = windowTitle;
+                    root.prettyActiveWindow = root.prettyTitle(windowTitle);
+                    root.activeWindowIcon = root.titleToIcon(windowTitle);
+                } catch (error) {
+                    console.warn("Failed to parse active window data:", error);
+                    root.activeWindow = "undefined";
+                    root.prettyActiveWindow = root.prettyTitle("undefined");
+                    root.activeWindowIcon = root.titleToIcon("undefined");
+                }
             }
         }
     }
@@ -113,7 +121,6 @@ Singleton {
                 });
 
                 root.workspaceWindows = workspaceData;
-                console.log("classes[0]: " + root.workspaceWindows[10].classes[0])
             }
         }
     }
