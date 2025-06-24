@@ -39,7 +39,7 @@ Scope {
                     spacing: 10
                     anchors {
                         right: parent.right
-                        rightMargin: 10
+                        rightMargin: 20
                         verticalCenter: parent.verticalCenter
                     }
 
@@ -50,13 +50,13 @@ Scope {
                 }
 
                 StyledRect {
-                    width: 200
+                    width: quote.implicitWidth + 20
                     height: 20
                     anchors.centerIn: parent
                     StyledText {
+                        id: quote
                         anchors.centerIn: parent
-                        text: "Disobey your desire"
-                        font.bold: true
+                        text: "I have submitted myself to Allah"
                     }
                 }
 
@@ -65,7 +65,7 @@ Scope {
                     spacing: 10
                     anchors {
                         left: parent.left
-                        leftMargin: 10
+                        leftMargin: 20
                         verticalCenter: parent.verticalCenter
                     }
 
