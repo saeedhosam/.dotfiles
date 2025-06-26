@@ -1,4 +1,5 @@
 import Quickshell
+import QtQuick.Layouts
 import QtQuick
 import "../singletons"
 import "../widgets"
@@ -49,18 +50,9 @@ Scope {
                     Clock {}
                 }
 
-                StyledRect {
-                    width: quote.implicitWidth + 20
-                    height: 20
-                    anchors.centerIn: parent
-                    StyledText {
-                        id: quote
-                        anchors.centerIn: parent
-                        text: "I have submitted myself to Allah"
-                    }
-                }
+                Quote {}
 
-                Row {
+                RowLayout {
                     id: leftRow
                     spacing: 10
                     anchors {

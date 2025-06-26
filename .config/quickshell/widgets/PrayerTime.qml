@@ -69,6 +69,7 @@ StyledRect {
             implicitHeight: 200
             visible: true
             color: "transparent"
+            // anchor.rect.x: 1517
             anchor.rect.x: 1517
             anchor.rect.y: 40
 
@@ -76,7 +77,7 @@ StyledRect {
                 anchors.fill: parent
 
                 ColumnLayout {
-                    anchors.fill: parent
+                    anchors.centerIn: parent
                     RowLayout {
                         StyledText {
                             text: "Marghrib"
