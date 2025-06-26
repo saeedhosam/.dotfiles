@@ -15,26 +15,23 @@ StyledRect {
     }
 
     MouseArea {
-        id: mouse
         anchors.fill: parent
         hoverEnabled: true
-        // onClicked: popupLoader.active = !popupLoader.active
-        onEntered: popupLoader.active = true
-        onExited: popupLoader.active = false
+        onClicked: popupLoader.item.visible = !popupLoader.item.visible
+        cursorShape: Qt.PointingHandCursor
     }
 
     LazyLoader {
         id: popupLoader
+        loading: true
 
         PopupWindow {
             id: popupWindow
-            anchor.window: root.QsWindow.window
+            anchor.item: root
+            anchor.rect.y: 30
             implicitWidth: 150
             implicitHeight: 150
-            visible: true
             color: "transparent"
-            anchor.rect.x: root.x
-            anchor.rect.y: 40
 
             StyledRect {
                 anchors.fill: parent

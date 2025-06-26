@@ -54,24 +54,21 @@ StyledRect {
         id: mouse
         anchors.fill: parent
         hoverEnabled: true
-        // onClicked: popupLoader.active = !popupLoader.active
-        onEntered: popupLoader.active = true
-        onExited: popupLoader.active = false
+        cursorShape: Qt.PointingHandCursor
+        onClicked: popupLoader.item.visible = !popupLoader.item.visible
     }
 
     LazyLoader {
         id: popupLoader
+        loading: true
 
         PopupWindow {
             id: popupWindow
-            anchor.window: root.QsWindow.window
+            anchor.item: root
+            anchor.rect.y: 30
             implicitWidth: 200
             implicitHeight: 200
-            visible: true
             color: "transparent"
-            // anchor.rect.x: 1517
-            anchor.rect.x: 1517
-            anchor.rect.y: 40
 
             StyledRect {
                 anchors.fill: parent

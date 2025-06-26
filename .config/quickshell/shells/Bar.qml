@@ -1,5 +1,4 @@
 import Quickshell
-import QtQuick.Layouts
 import QtQuick
 import "../singletons"
 import "../widgets"
@@ -52,7 +51,7 @@ Scope {
 
                 Quote {}
 
-                RowLayout {
+                Row {
                     id: leftRow
                     spacing: 10
                     anchors {
