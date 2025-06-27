@@ -25,6 +25,10 @@ return {
                 name = 'cs',
                 path = '~/obsidian/cs',
             },
+            {
+                name = 'work',
+                path = '~/obsidian-mondee',
+            },
         },
     },
 }
