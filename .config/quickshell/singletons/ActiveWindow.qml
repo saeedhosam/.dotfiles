@@ -17,14 +17,17 @@ Singleton {
             "Google-chrome": "",
             "google-chrome": "",
             "firefox": "󰈹",
+            "zen": "",
             // Terminals
             "com.mitchellh.ghostty": "",
+            "Cursor": "󰆧",
             // Communication
             "discord": "",
             // Other
             "undefined": "-",
             "org.pwmt.zathura": "",
-            "anki": "󱟱"
+            "anki": "󱟱",
+            "pomatez": ""
         })
 
     readonly property var titleMap: ({
@@ -33,6 +36,7 @@ Singleton {
             "google-chrome": "Google Chrome",
             "firefox": "Firefox",
             "Brave-browser": "Brave",
+            "zen": "Zen Browser",
             // Terminals
             "com.mitchellh.ghostty": "Ghostty",
             // Communication

@@ -1,5 +1,4 @@
 import QtQuick
-import Quickshell.Widgets
 import Quickshell.Hyprland
 import "../singletons"
 
