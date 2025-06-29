@@ -18,7 +18,7 @@ Singleton {
             "google-chrome": "",
             "firefox": "󰈹",
             "zen": "",
-            // Terminals
+            // Terminals and Editors
             "com.mitchellh.ghostty": "",
             "Cursor": "󰆧",
             // Communication
@@ -27,7 +27,8 @@ Singleton {
             "undefined": "-",
             "org.pwmt.zathura": "",
             "anki": "󱟱",
-            "pomatez": ""
+            "pomatez": "",
+            "Spotify": ""
         })
 
     readonly property var titleMap: ({
