@@ -1,7 +1,7 @@
 # Workflow
 
-`neovim`
-`discord`
+- `neovim`
+- `discord`
 `zen-browser` for general stuff
 `qutebrowser` for reading documentation
 `obsidian`
