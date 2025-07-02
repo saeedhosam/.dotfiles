@@ -4,7 +4,7 @@ return {
         ---@module 'oil'
         ---@type oil.SetupOpts
         dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if you prefer nvim-web-devicons
-        enabled = false,
+        -- enabled = false,
         lazy = false,
         opts = {
             watch_for_changes = true,

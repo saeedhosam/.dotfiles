@@ -28,7 +28,8 @@ Singleton {
             "org.pwmt.zathura": "",
             "anki": "󱟱",
             "pomatez": "",
-            "Spotify": ""
+            "Spotify": "",
+            "com.moonlight_stream.Moonlight": "󰮂"
         })
 
     readonly property var titleMap: ({
@@ -46,7 +47,8 @@ Singleton {
             "undefined": "Desktop",
             "quickshell": "Quickshell",
             "org.pwmt.zathura": "Zathura",
-            "anki": "Anki"
+            "anki": "Anki",
+            "com.moonlight_stream.Moonlight": "Moonlight"
         })
 
     function prettyTitle(className: string): string {
