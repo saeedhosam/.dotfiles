@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 
 -- Essentials
+map("v", "<leader>p", [["_dP]], { noremap = true, silent = true })
 map('n', '<C-[>', '<cmd>noh<CR>')
 map('n', '<C-c>', '<cmd>noh<CR>')
 map('n', ';', ':')
