@@ -20,9 +20,11 @@
 - `kdeconnect`
 
 --
+
 ## Windows
 
-Here are the commands used to make symbolic links, install Alacritty, and Neovim.
+Here are the commands used to make symbolic links, install Alacritty, and
+Neovim.
 
 - `cmd /c mklink /D "%APPDATA%\alacritty" "%USERPROFILE%\.dotfiles\.config\alacritty"`
 - `cmd /c mklink /D "%LOCALAPPDATA%\nvim" "%USERPROFILE%\.dotfiles\.config\nvim"`
