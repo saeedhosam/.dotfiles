@@ -36,10 +36,10 @@ map({ 'n', 'i' }, '<A-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'buffer move 
 
 -- Misc
 map('n', '<leader>f', function()
-  require('conform').format { lsp_fallback = true }
+        require('conform').format { lsp_fallback = true }
 end, { desc = 'Format file' })
 map('n', '<leader>st', function()
-  require('nvchad.themes').open()
+        require('nvchad.themes').open()
 end)
 map('n', '<leader>l', '<cmd>Lazy<CR>', { desc = 'Open Lazy' })
 map('n', '<leader>q', '<cmd>bdelete<CR>', { desc = 'buffer close' })
@@ -54,5 +54,5 @@ map('n', '<leader>sb', fzf.buffers, { desc = '[S]earch Recent Jumplists' })
 map('n', '<leader>sg', fzf.git_files, { desc = '[S]earch Git Files' })
 map('n', '<leader>sa', fzf.live_grep, { desc = '[S]earch Grep' })
 map('n', '<leader>sn', function()
-  fzf.files { cwd = vim.fn.stdpath 'config' }
+        fzf.files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
