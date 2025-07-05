@@ -38,9 +38,6 @@ map({ 'n', 'i' }, '<A-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'buffer move 
 map('n', '<leader>f', function()
   require('conform').format { lsp_fallback = true }
 end, { desc = 'Format file' })
-map('n', '<leader>st', function()
-  require('nvchad.themes').open()
-end)
 map('n', '<leader>l', '<cmd>Lazy<CR>', { desc = 'Open Lazy' })
 map('n', '<leader>q', '<cmd>bdelete<CR>', { desc = 'buffer close' })
 map('t', '<C-[>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
