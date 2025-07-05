@@ -1,5 +1,3 @@
-dofile(vim.g.base46_cache .. 'mason')
-
 return {
     'mason-org/mason.nvim',
     cmd = { 'Mason', 'MasonInstall', 'MasonUpdate' },
