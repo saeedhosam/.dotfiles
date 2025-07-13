@@ -35,6 +35,7 @@ vim.opt.pumblend = 10
 vim.opt.winblend = 0
 vim.opt.lazyredraw = true
 vim.opt.synmaxcol = 300
+vim.opt.fillchars = { eob = ' ' }
 
 -- File handling
 vim.opt.backup = false
