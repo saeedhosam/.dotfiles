@@ -3,7 +3,6 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if you prefer nvim-web-devicons
-    -- enabled = false,
     lazy = false,
     opts = {
         watch_for_changes = true,
@@ -29,10 +28,10 @@ return {
             end,
             ['H'] = { 'actions.parent', mode = 'n' },
             ['<C-s>'] = { 'actions.select', opts = { vertical = true } },
-            ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
+            -- ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
             ['<C-t>'] = { 'actions.select', opts = { tab = true } },
             ['<C-p>'] = 'actions.preview',
-            ['<C-l>'] = 'actions.refresh',
+            -- ['<C-l>'] = 'actions.refresh',
             ['_'] = { 'actions.open_cwd', mode = 'n' },
             ['`'] = { 'actions.cd', mode = 'n' },
             ['~'] = { 'actions.cd', opts = { scope = 'tab' }, mode = 'n' },
@@ -43,6 +42,14 @@ return {
         },
     },
     vim.keymap.set('n', '\\', function()
-        require('oil').toggle_float()
+        local oil = require 'oil'
+        local bufnr = vim.api.nvim_get_current_buf()
+        local filetype = vim.bo[bufnr].filetype
+
+        if filetype == 'oil' then
+            oil.close()
+        else
+            oil.open()
+        end
     end),
 }
