@@ -9,15 +9,6 @@ autocmd('TextYankPost', {
     end,
 })
 
--- Format on save
-autocmd('BufWritePre', {
-    group = augroup,
-    pattern = '*',
-    callback = function(args)
-        require('conform').format { bufnr = args.buf }
-    end,
-})
-
 -- Return to last edit position when opening files
 autocmd('BufReadPost', {
     group = augroup,

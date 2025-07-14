@@ -47,8 +47,8 @@ map('n', '<leader>w', '<cmd>close<CR>', { desc = 'Close window' })
 map('n', '<leader>o', '<cmd>only<CR>', { desc = 'Close all windows except current' })
 
 -- Splitting & Resizing
-map('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = 'Split window vertically' })
-map('n', '<leader>sh', '<cmd>split<CR>', { desc = 'Split window horizontally' })
+map('n', '<leader>av', '<cmd>vsplit<CR>', { desc = 'Split window vertically' })
+map('n', '<leader>ah', '<cmd>split<CR>', { desc = 'Split window horizontally' })
 map('n', '<C-Up>', '<cmd>resize +2<CR>', { desc = 'Increase window height' })
 map('n', '<C-Down>', '<cmd>resize -2<CR>', { desc = 'Decrease window height' })
 map('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease window width' })
@@ -69,15 +69,15 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position'
 
 -- FzfLua
 local fzf = require 'fzf-lua'
-map('n', '<leader>fh', fzf.helptags, { desc = 'Fzf in help pages' })
-map('n', '<leader>fk', fzf.keymaps, { desc = 'Fzf in keymaps' })
-map('n', '<leader>fj', fzf.jumps, { desc = 'Fzf in recent jumplists' })
-map('n', '<M-/>', fzf.buffers, { desc = 'Fzf in buffers' })
-map('n', '<leader>fg', fzf.git_files, { desc = 'Fzf in git' })
-map('n', '<leader>fa', fzf.live_grep, { desc = 'Fzf with grep' })
-map('n', '<leader>fn', function()
+map('n', '<M-/>', fzf.buffers, { desc = 'Search in buffers' })
+map('n', '<leader>sh', fzf.helptags, { desc = 'Search in help pages' })
+map('n', '<leader>sk', fzf.keymaps, { desc = 'Search in keymaps' })
+map('n', '<leader>sj', fzf.jumps, { desc = 'Search in recent jumplists' })
+map('n', '<leader>sg', fzf.git_files, { desc = 'Search in git' })
+map('n', '<leader>sa', fzf.live_grep, { desc = 'Search with grep' })
+map('n', '<leader>sn', function()
     fzf.files { cwd = vim.fn.stdpath 'config' }
-end, { desc = 'Fzf in Neovim config files' })
+end, { desc = 'Search in Neovim config files' })
 
 -- Copy Full File-Path
 vim.keymap.set('n', '<leader>pa', function()
@@ -85,3 +85,8 @@ vim.keymap.set('n', '<leader>pa', function()
     vim.fn.setreg('+', path)
     print('file:', path)
 end)
+
+-- Format file
+map('n', '<leader>f', function()
+    require('conform').format { lsp_fallback = true }
+end, { desc = 'Format file' })
