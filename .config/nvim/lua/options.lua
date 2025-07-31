@@ -53,7 +53,7 @@ vim.opt.hidden = true
 vim.opt.errorbells = false
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.autochdir = false
-vim.opt.iskeyword:append '-'
+-- vim.opt.iskeyword:append '-' -- I don't love this option, because it's not sth standard.
 vim.opt.path:append '**'
 vim.opt.selection = 'exclusive'
 vim.opt.mouse = 'a'
