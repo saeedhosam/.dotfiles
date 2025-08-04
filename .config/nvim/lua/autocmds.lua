@@ -78,3 +78,17 @@ vim.api.nvim_create_autocmd('BufWritePre', {
         end
     end,
 })
+
+-- Open diagnostics for the current line on cursor wait
+vim.api.nvim_create_autocmd('CursorHold', {
+    callback = function()
+        vim.diagnostic.open_float(nil, {
+            focusable = false,
+            close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+            border = 'rounded',
+            source = 'always',
+            prefix = '',
+            scope = 'line',
+        })
+    end,
+})

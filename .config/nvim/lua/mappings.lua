@@ -24,8 +24,12 @@ map('n', '<C-u>', '<C-u>zz', { desc = 'Half page up (centered)' })
 map({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
 
 -- Buffer navigation
-map({ 'n', 'i' }, '<M-.>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
-map({ 'n', 'i' }, '<M-,>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+map({ 'n', 'i' }, '<M-.>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next buffer' })
+map({ 'n', 'i' }, '<M-,>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
+
+-- Buffer ordering
+map('n', '<M-o>', '<cmd>BufferLineMoveNext<CR>', { desc = 'Move the buffer forward'})
+map('n', '<M-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'Move the buffer backwards'})
 
 -- Buffer closure
 map('n', '<leader>q', '<cmd>bdelete<CR>', { desc = 'buffer close' })
