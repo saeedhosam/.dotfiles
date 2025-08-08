@@ -2,15 +2,17 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Base46
+vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
+vim.g.theme = 'chadracula-evondev'
+
 -- Lazy plugins manager
 require 'options'
 require 'config.lazy'
 require 'mappings'
 require 'autocmds'
 
--- Theme & transparency
-vim.cmd.colorscheme 'tokyonight-night'
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+-- Base46
+dofile(vim.g.base46_cache .. 'defaults')
+dofile(vim.g.base46_cache .. 'statusline')
+require('base46').load_all_highlights()
