@@ -28,8 +28,8 @@ map({ 'n', 'i' }, '<M-.>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next buffer
 map({ 'n', 'i' }, '<M-,>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
 
 -- Buffer ordering
-map('n', '<M-o>', '<cmd>BufferLineMoveNext<CR>', { desc = 'Move the buffer forward'})
-map('n', '<M-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'Move the buffer backwards'})
+map('n', '<M-o>', '<cmd>BufferLineMoveNext<CR>', { desc = 'Move the buffer forward' })
+map('n', '<M-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'Move the buffer backwards' })
 
 -- Buffer closure
 map('n', '<leader>q', '<cmd>bdelete<CR>', { desc = 'buffer close' })
@@ -69,11 +69,14 @@ map('v', '<', '<gv', { desc = 'Indent left and reselect' })
 map('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 -- Better J behavior
-vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position' })
+map('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position' })
+
+-- Toggle Copilot chat
+map('n', '<M-\'>', '<cmd>CopilotChatToggle<CR>', { desc = 'Copilot chat toggle' })
 
 -- FzfLua
 local fzf = require 'fzf-lua'
-map('n', '<M-/>', fzf.buffers, { desc = 'Search in buffers' })
+-- map('n', '<M-/>', fzf.buffers, { desc = 'Search in buffers' })
 map('n', '<leader>sh', fzf.helptags, { desc = 'Search in help pages' })
 map('n', '<leader>sk', fzf.keymaps, { desc = 'Search in keymaps' })
 map('n', '<leader>sj', fzf.jumps, { desc = 'Search in recent jumplists' })
@@ -84,7 +87,7 @@ map('n', '<leader>sn', function()
 end, { desc = 'Search in Neovim config files' })
 
 -- Copy Full File-Path
-vim.keymap.set('n', '<leader>pa', function()
+map('n', '<leader>pa', function()
     local path = vim.fn.expand '%:p'
     vim.fn.setreg('+', path)
     print('file:', path)
