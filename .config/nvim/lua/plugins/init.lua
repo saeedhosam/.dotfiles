@@ -1,26 +1,21 @@
 return {
-    { 'Mofiqul/dracula.nvim' },
-    {
-        'refractalize/oil-git-status.nvim',
-        dependencies = {
-            'stevearc/oil.nvim',
-        },
-        config = true,
-    },
+  -- Disabled plugins
+  { 'nvim-tree/nvim-tree.lua', enabled = false },
 
-    -- Plugins for Base46
-    { 'nvim-lua/plenary.nvim' },
-    { 'nvchad/volt' },
-    { 'nvim-tree/nvim-web-devicons', lazy = true },
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
 
-    {
-        'nvchad/ui',
-        config = function()
-            require 'nvchad'
-        end,
-    },
-    {
-        'nvchad/base46',
-        lazy = true,
-    },
+  -- These are some examples, uncomment them if you want to see them work!
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+
+  -- test new blink
+  { import = "nvchad.blink.lazyspec" },
 }

@@ -1,13 +1,16 @@
+-- You don't have to worry about ensure_installed because it auto installs the langauge of the opened file anyway.
+
 return {
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'nushell/tree-sitter-nu' },
-    event = { 'BufReadPost', 'BufNewFile' },
-    cmd = { 'TSInstall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
-    build = ':TSUpdate',
-    opts = function()
-        return require 'config.treesitter'
-    end,
-    config = function(_, opts)
-        require('nvim-treesitter.configs').setup(opts)
-    end,
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      "vim",
+      "lua",
+      "vimdoc",
+      "html",
+      "css",
+      "cpp",
+      "nu",
+    },
+  },
 }
