@@ -1,5 +1,6 @@
 return {
     'folke/todo-comments.nvim',
+    enabled = false,
     opts = {
         keywords = {
             True = {

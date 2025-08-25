@@ -14,10 +14,11 @@ return {
             tsx = { 'prettier' },
             typescriptreact = { 'prettier' },
             toml = { 'taplo' },
+            cpp = { 'clang-format' },
         },
         default_format_opts = {
-            lsp_format = "fallback",
-            timeout_ms = 3000
-        }
+            lsp_format = 'fallback',
+            timeout_ms = 3000,
+        },
     },
 }

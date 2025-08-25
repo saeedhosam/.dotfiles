@@ -23,6 +23,7 @@ return {
         lspconfig.taplo.setup {}
         lspconfig.ruff.setup {}
         lspconfig.hyprls.setup {}
+        lspconfig.clangd.setup {}
         lspconfig.qmlls.setup {
             cmd = { 'qmlls', '-E' },
         }

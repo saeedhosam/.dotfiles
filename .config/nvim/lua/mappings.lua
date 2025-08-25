@@ -23,13 +23,24 @@ map('n', '<C-u>', '<C-u>zz', { desc = 'Half page up (centered)' })
 -- Delete without yanking
 map({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
 
+-- Tabufline Init
+local tabufline = require 'nvchad.tabufline'
+
 -- Buffer navigation
-map({ 'n', 'i' }, '<M-.>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next buffer' })
-map({ 'n', 'i' }, '<M-,>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
+map({ 'n', 'i' }, '<M-.>', tabufline.next, { desc = 'Next buffer' })
+map({ 'n', 'i' }, '<M-,>', tabufline.prev, { desc = 'Previous buffer' })
+-- map({ 'n', 'i' }, '<M-.>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next buffer' })
+-- map({ 'n', 'i' }, '<M-,>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
 
 -- Buffer ordering
-map('n', '<M-o>', '<cmd>BufferLineMoveNext<CR>', { desc = 'Move the buffer forward' })
-map('n', '<M-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'Move the buffer backwards' })
+map('n', '<M-o>', function()
+    tabufline.move_buf(1)
+end, { desc = 'Move the buffer forward' })
+map('n', '<M-i>', function()
+    tabufline.move_buf(-1)
+end, { desc = 'Move the buffer backwards' })
+-- map('n', '<M-o>', '<cmd>BufferLineMoveNext<CR>', { desc = 'Move the buffer forward' })
+-- map('n', '<M-i>', '<cmd>BufferLineMovePrev<CR>', { desc = 'Move the buffer backwards' })
 
 -- Buffer closure
 map('n', '<leader>q', '<cmd>bdelete<CR>', { desc = 'buffer close' })
@@ -72,10 +83,11 @@ map('v', '>', '>gv', { desc = 'Indent right and reselect' })
 map('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position' })
 
 -- Toggle Copilot chat
-map('n', '<M-\'>', '<cmd>CopilotChatToggle<CR>', { desc = 'Copilot chat toggle' })
+map('n', "<M-'>", '<cmd>CopilotChatToggle<CR>', { desc = 'Copilot chat toggle' })
 
--- FzfLua
+-- FzfLua Init
 local fzf = require 'fzf-lua'
+
 -- map('n', '<M-/>', fzf.buffers, { desc = 'Search in buffers' })
 map('n', '<leader>sh', fzf.helptags, { desc = 'Search in help pages' })
 map('n', '<leader>sk', fzf.keymaps, { desc = 'Search in keymaps' })
