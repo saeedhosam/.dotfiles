@@ -11,5 +11,15 @@ return {
             },
         },
         max_concurrent_installers = 10,
+        ensure_installed = {
+            'lua_ls',
+            'ts_ls',
+            'marksman',
+            'taplo',
+            'ruff',
+            'hyprls',
+            'clangd',
+            'qmlls',
+        },
     },
 }
