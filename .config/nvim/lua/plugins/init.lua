@@ -7,10 +7,12 @@ return {
         },
         config = true,
     },
+
     -- Plugins for Base46
-    'nvim-lua/plenary.nvim',
-    'nvchad/volt',
+    { 'nvim-lua/plenary.nvim' },
+    { 'nvchad/volt' },
     { 'nvim-tree/nvim-web-devicons', lazy = true },
+
     {
         'nvchad/ui',
         config = function()
