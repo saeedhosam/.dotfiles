@@ -3,6 +3,7 @@ return {
         'toml',
         'lua',
         'nu',
+        'cpp',
         'luadoc',
         'printf',
         'vim',
@@ -16,6 +17,5 @@ return {
         enable = true,
         use_languagetree = true,
     },
-
     indent = { enable = true },
 }
