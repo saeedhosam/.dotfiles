@@ -89,7 +89,7 @@ map("n", "<leader>v", function()
 end, { desc = "terminal new vertical term" })
 
 -- toggleable
-map({ "n", "t" }, "<A-v>", function()
+map({ "n", "t" }, "<A-/>", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
 end, { desc = "terminal toggleable vertical term" })
 
