@@ -1,6 +1,10 @@
 return {
   -- Disabled plugins
-  { 'nvim-tree/nvim-tree.lua', enabled = false },
+  { "nvim-tree/nvim-tree.lua", enabled = false },
+  {
+    "benomahony/oil-git.nvim",
+    dependencies = { "stevearc/oil.nvim" },
+  },
 
   {
     "stevearc/conform.nvim",
