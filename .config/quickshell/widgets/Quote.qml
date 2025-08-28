@@ -11,7 +11,7 @@ StyledRect {
     StyledText {
         id: quote
         anchors.centerIn: parent
-        text: "Have faith."
+        text: "Focus."
     }
 
     MouseArea {
@@ -29,8 +29,9 @@ StyledRect {
             id: popupWindow
             anchor.item: root
             anchor.rect.y: 30
-            implicitWidth: 150
-            implicitHeight: 150
+            anchor.rect.x: -250
+            implicitWidth: 600
+            implicitHeight: 60
             color: "transparent"
 
             StyledRect {
@@ -40,13 +41,10 @@ StyledRect {
                     anchors.centerIn: parent
 
                     StyledText {
-                        text: "Read Qur'an"
+                        text: "Seek knowledge, prepare, and train as hard as you can."
                     }
                     StyledText {
-                        text: "Study"
-                    }
-                    StyledText {
-                        text: "Exercise"
+                        text: "Once your training is halted, seek more knowledge, and train more, and harder."
                     }
                 }
             }
