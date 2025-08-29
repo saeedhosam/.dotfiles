@@ -7,7 +7,7 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- for format on save to work, check the config file
     opts = require "configs.conform",
   },
   {
@@ -16,4 +16,7 @@ return {
       require "configs.lspconfig"
     end,
   },
+
+  -- Disabled plugins
+  { "nvim-tree/nvim-tree.lua", enabled = false },
 }
