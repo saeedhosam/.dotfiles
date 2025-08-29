@@ -1,3 +1,5 @@
+-- Add the defnition and declaration stuff
+
 local map = vim.keymap.set
 
 -- START OF NVCHAD DEFAULT MAPPINGS
