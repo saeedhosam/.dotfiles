@@ -1,6 +1,10 @@
 return {
   { import = "nvchad.blink.lazyspec" },
   {
+    "saghen/blink.cmp",
+    opts = { keymap = { ["<CR>"] = false } },
+  },
+  {
     "benomahony/oil-git.nvim",
     dependencies = { "stevearc/oil.nvim" },
     opts = {},

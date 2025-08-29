@@ -57,7 +57,7 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help 
 map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>fc", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
+map("n", "<leader>c", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 map("n", "<leader>ftt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 map("n", "<leader>fth", function()
   require("nvchad.themes").open()
@@ -117,8 +117,8 @@ map("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "open Lazy window" })
 -- Center screen when jumping
 map("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 map("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
-map("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
-map("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
+-- map("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
+-- map("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 
 -- Window navigation
 map("n", "<C-h>", "<C-W>h", { desc = "Move to left window" })

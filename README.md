@@ -1,4 +1,11 @@
-# Workflow
+# Oh on
+
+## TO DOs
+
+- [ ] Make the blink.cmp ignore the enter key, I juust want it to accpet when
+      pressing ctrl+y
+
+## Workflow
 
 - `neovim`
 - `discord`

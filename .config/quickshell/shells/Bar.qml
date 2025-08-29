@@ -43,6 +43,7 @@ Scope {
                         verticalCenter: parent.verticalCenter
                     }
 
+                    Chat {}
                     Wallpaper {}
                     Battery {}
                     PrayerTime {}
