@@ -77,30 +77,23 @@ end, { desc = "Search in Neovim config files" })
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- new terminals
-map("n", "<leader>h", function()
-  require("nvchad.term").new { pos = "sp" }
-end, { desc = "terminal new horizontal term" })
-
-map("n", "<leader>v", function()
+map("n", "<leader>/", function()
   require("nvchad.term").new { pos = "vsp" }
 end, { desc = "terminal new vertical term" })
+map("n", "<leader>'", function()
+  require("nvchad.term").new { pos = "float" }
+end, { desc = "terminal new floating term" })
 
 -- toggleable
-map({ "n", "t" }, "<A-/>", function()
+map({ "n", "t" }, "<M-/>", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
 end, { desc = "terminal toggleable vertical term" })
-
-map({ "n", "t" }, "<A-h>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
-end, { desc = "terminal toggleable horizontal term" })
-
-map({ "n", "t" }, "<A-i>", function()
+map({ "n", "t" }, "<M-'>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
-
 map("n", "<leader>wk", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, { desc = "whichkey query lookup" })
@@ -159,9 +152,6 @@ map("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 -- Better J behavior
 map("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
-
--- Toggle Copilot chat
-map("n", "<M-'>", "<cmd>CopilotChatToggle<CR>", { desc = "Copilot chat toggle" })
 
 -- copy full file-path
 map("n", "<leader>pa", function()
