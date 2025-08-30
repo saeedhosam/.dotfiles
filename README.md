@@ -4,7 +4,9 @@
 
 - [x] Make the blink.cmp ignore the enter key, I juust want it to accpet when
       pressing ctrl+y
-- [ ] Make it so that when you press <leader>r only in nvim, the program runs by identifying the extention of the current file.
+- [ ] Make it so that when you press <leader>r only in nvim, the program runs by
+      identifying the extention of the current file.
+- [ ] Display the error when you run programs via nvim
 
 ## Workflow
 
