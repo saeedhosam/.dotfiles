@@ -105,9 +105,9 @@ map("n", ";", ":", { desc = "Enter command mode" })
 map("n", ":", "", { desc = "Remove default command mode" })
 map("t", "<C-[>", "<C-\\><C-N>", { desc = "Escape termainal mode" })
 map("n", "<C-[>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
-map("n", "<leader>x", "<cmd>so<CR>", { desc = "Source file" })
-map("n", "{", "}") -- idk why these were different than jk, at least I don't know 'yet'
-map("n", "}", "{")
+map("n", "<leader>x", "<cmd>so % | echom 'File sourced!'<CR>", { desc = "Source file" })
+-- map("n", "{", "}") -- idk why these were different than jk, at least I don't know 'yet'
+-- map("n", "}", "{")
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = true, silent = true })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true, silent = true })
 
@@ -164,3 +164,7 @@ end)
 map({ "n", "x" }, "<leader>a", function()
   require("conform").format { lsp_fallback = true }
 end, { desc = "general format file" })
+
+-- running programs
+map("n", "<leader>rcp", ":!g++ % -o %:r ; ./%:r<CR>", { desc = "run c++ program" })
+map("n", "<leader>rp", ":!python %<CR>", { desc = "run python program" })
