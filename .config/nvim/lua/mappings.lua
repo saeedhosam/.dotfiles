@@ -57,7 +57,7 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help 
 map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>c", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
+map("n", "<leader>cn", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 map("n", "<leader>ftt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 map("n", "<leader>fth", function()
   require("nvchad.themes").open()
@@ -154,7 +154,7 @@ map("v", ">", ">gv", { desc = "Indent right and reselect" })
 map("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 
 -- copy full file-path
-map("n", "<leader>pa", function()
+map("n", "<leader>ca", function()
   local path = vim.fn.expand "%:p"
   vim.fn.setreg("+", path)
   print("file:", path)
@@ -166,5 +166,18 @@ map({ "n", "x" }, "<leader>a", function()
 end, { desc = "general format file" })
 
 -- running programs
-map("n", "<leader>rcp", ":!g++ % -o %:r ; ./%:r<CR>", { desc = "run c++ program" })
-map("n", "<leader>rp", ":!python %<CR>", { desc = "run python program" })
+map("n", "<leader>p", function()
+  local ext = vim.fn.expand "%:e"
+  local run_cmd
+
+  if ext == "cpp" then
+    run_cmd = ":!g++ % -o %:r ; %:r<CR>"
+  elseif ext == "py" then
+    run_cmd = ":!python %<CR>"
+  else
+    print("No run command defined for *." .. ext)
+    return
+  end
+
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(run_cmd, true, false, true), "n", true)
+end, { desc = "run program based on extension" })
