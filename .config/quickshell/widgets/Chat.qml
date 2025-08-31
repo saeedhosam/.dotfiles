@@ -29,6 +29,7 @@ StyledRect {
             id: popupWindow
             anchor.item: root
             anchor.rect.y: 30
+            anchor.rect.x: (root.width - popupWindow.implicitWidth) / 2
             implicitWidth: 400
             implicitHeight: 600
         }
