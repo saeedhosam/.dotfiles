@@ -43,10 +43,15 @@
 - `git`
 - `base-devel`
 - `spotify-launcher`
+- `pavucontrol`
+- `swww`
+- `networkmanager`
+- `fastfetch`
+- `stow`
 
 ## Commands
 
-- `sudo pacman -S spotify-launcher neovim git base-devel dysk filelight ghostty fontconfig nerd-fonts ttf-dejavu ttf-cascadia-code ttf-opensans noto-fonts mpv hyprland discord nushell qutebrowser alacritty tmux copyq zathura rofi yazi btop kdeconnect grim wl-clipboard`
+- `sudo pacman -S stow pavucontrol networkmanager fastfetch swww spotify-launcher neovim git base-devel dysk filelight ghostty fontconfig nerd-fonts ttf-dejavu ttf-cascadia-code ttf-opensans noto-fonts mpv hyprland discord nushell qutebrowser alacritty tmux copyq zathura rofi yazi btop kdeconnect grim wl-clipboard`
 - `yay -S zen-browser quickshell obsidian matugen-bin brave-bin google-chrome`
 
 ## Windows
