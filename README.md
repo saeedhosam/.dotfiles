@@ -4,6 +4,7 @@
 
 - [x] NVIM: Make the blink.cmp ignore the enter key, I juust want it to accpet
       when pressing ctrl+y
+- [x] NVIM: Add the serround plugin
 - [ ] NVIM: Make it so that when you press <leader>r only in nvim, the program
       runs by identifying the extention of the current file.
 - [ ] NVIM: Display the error when you run programs via nvim
@@ -14,6 +15,7 @@
 
 ## Workflow
 
+- `hyprland`
 - `neovim`
 - `discord`
 - `zen-browser` for general stuff
@@ -24,7 +26,6 @@
 - `ghostty` for Arch
 - `alacritty` for Windows
 - `tmux`
-- `flameshot` -- I changed that for who knows
 - `copyq`
 - `zathura`
 - `GSuite`
@@ -33,8 +34,19 @@
 - `yazi`
 - `btop`
 - `kdeconnect`
+- `grim`
+- `wl-clipboard`
+- `nushell`
+- `mpv`
+- `matugen`
+- `fontconfig` and its fonts
+- `git`
+- `base-devel`
 
---
+## Commands
+
+- `sudo pacman -S neovim git base-devel dysk filelight ghostty fontconfig nerd-fonts ttf-dejavu ttf-cascadia-code ttf-opensans noto-fonts mpv hyprland discord nushell qutebrowser alacritty tmux copyq zathura rofi yazi btop kdeconnect grim wl-clipboard`
+- `yay -S zen-browser quickshell obsidian matugen-bin brave-bin google-chrome`
 
 ## Windows
 
