@@ -1,18 +1,23 @@
 # Oh on
 
-## TO DOs
+## TO-DOs
 
-- [x] Make the blink.cmp ignore the enter key, I juust want it to accpet when
-      pressing ctrl+y
-- [ ] Make it so that when you press <leader>r only in nvim, the program runs by
-      identifying the extention of the current file.
-- [ ] Display the error when you run programs via nvim
+- [x] NVIM: Make the blink.cmp ignore the enter key, I juust want it to accpet
+      when pressing ctrl+y
+- [ ] NVIM: Make it so that when you press <leader>r only in nvim, the program
+      runs by identifying the extention of the current file.
+- [ ] NVIM: Display the error when you run programs via nvim
+
+- [ ] Quickshell: Make a todo list that's connected to a todo list app and add
+      the morning routine; prayer, qur'an, adhkar
+- [ ] Quickshell: Create a chat for local or api AI
 
 ## Workflow
 
 - `neovim`
 - `discord`
 - `zen-browser` for general stuff
+- `brave` for ad blocking browsing
 - `qutebrowser` for reading documentation
 - `obsidian`
 - `quickshell`
