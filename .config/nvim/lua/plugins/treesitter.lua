@@ -3,6 +3,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
+    auto_install = true,
     ensure_installed = {
       "vim",
       "lua",
@@ -11,6 +12,7 @@ return {
       "css",
       "cpp",
       "nu",
+      "tsx",
     },
   },
 }
