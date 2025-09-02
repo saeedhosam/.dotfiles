@@ -6,7 +6,6 @@ return {
   },
   lazy = false,
   ---@module 'oil'
-  ---@type oil.SetupOpts
   opts = {
     watch_for_changes = true,
     win_options = {
