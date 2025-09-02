@@ -5,11 +5,6 @@ return {
     opts = { keymap = { ["<CR>"] = false } },
   },
   {
-    "benomahony/oil-git.nvim",
-    dependencies = { "stevearc/oil.nvim" },
-    opts = {},
-  },
-  {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- for format on save to work, check the config file
     opts = require "configs.conform",
