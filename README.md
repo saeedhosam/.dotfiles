@@ -13,6 +13,8 @@
       the morning routine; prayer, qur'an, adhkar
 - [ ] Quickshell: Create a chat for local or api AI
 
+- [ ] Rofi: Make everything open in --silent for Hyprland, it's really frustrating!
+
 ## Workflow
 
 - `hyprland`
